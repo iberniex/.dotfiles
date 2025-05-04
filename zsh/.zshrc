@@ -139,7 +139,7 @@ lg()
 
 alias v="nvim"
 alias sp="spotify_player"
-alias lg="lazygit"
+alias lzg="lazygit"
 
 # Cargo Path
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -154,3 +154,7 @@ source <(fzf --zsh)
 
 # zsh-autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+#zsh-syntax-highlighing
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
