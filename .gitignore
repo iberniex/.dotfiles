@@ -3,3 +3,5 @@ iterm2
 zed
 .DS_Store
 tmux/plugins
+**.luarc.json
+fish_variables
