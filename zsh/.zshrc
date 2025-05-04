@@ -139,6 +139,7 @@ lg()
 
 alias v="nvim"
 alias sp="spotify_player"
+alias lg="lazygit"
 
 # Cargo Path
 export PATH="$HOME/.cargo/bin:$PATH"
