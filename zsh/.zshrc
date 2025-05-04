@@ -148,3 +148,8 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export TERM="xterm-256color"
 
+# FZF configuration
+source <(fzf --zsh)
+
+# zsh-autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
