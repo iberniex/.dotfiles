@@ -12,6 +12,25 @@ if [[ "$OSTYPE" != "darwin"* ]]; then
     exit 0
 fi
 
+function slice_loop() {
+
+	local str="$1"
+	local start="$2"
+	local how_many="$3"
+	local len=${#str}
+
+	local result=""
+
+	for ((i = 0; i < how_many; i++)); do
+		local index=$(((start + i) % len))
+		local char="${str:index:1}"
+		result="$result$char"
+	done
+
+	echo "$result"
+
+}
+
 get_spotify_status() {
     local spotify_data
     spotify_data=$(osascript <<'END'
@@ -40,7 +59,32 @@ main() {
     if [ ! -f "$cache_file" ] || [ $(($(date +%s) - $(stat -f%c "$cache_file"))) -ge "$rate" ]; then
         get_spotify_status > "$cache_file"
     fi
-    cat "$cache_file"
+    # cat "$cache_file"
+
+
+    spotify_status=$(get_spotify_status)
+    start=0
+    len=${#spotify_status}
+    terminal_width=25
+
+      if [[ $len == 1 ]]; then
+        exit
+      fi
+
+      scrolling_text=""
+
+      for ((start = 0; start <= len; start++)); do
+        scrolling_text=$(slice_loop "$spotify_status" "$start" "$terminal_width")
+        echo -ne "\r"
+        echo "$scrolling_text "
+        echo -ne "\r"
+
+        sleep 0.08
+      done
+
+      echo -ne "\r"
+      echo "$scrolling_text "
+      echo -ne "\r"
 }
 
 main "$@"
