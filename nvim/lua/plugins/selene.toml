@@ -1,0 +1,5 @@
+std = "lua51"
+global = ["vim"]
+
+[files]
+included = ["."]

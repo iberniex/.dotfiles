@@ -1,0 +1,6 @@
+---
+std: neovim
+
+diagnostics:
+  global_allow:
+    - vim
