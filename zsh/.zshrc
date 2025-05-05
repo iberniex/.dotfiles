@@ -150,7 +150,8 @@ export VISUAL='nvim'
 export TERM="xterm-256color"
 
 # FZF configuration
-source <(fzf --zsh)
+source <(fzf --zsh --style full \
+    --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}')
 
 # zsh-autosuggestions
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
