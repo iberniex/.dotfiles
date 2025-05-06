@@ -1,7 +1,11 @@
 return {
   "folke/snacks.nvim",
 
+  priority = 1000,
   opts = {
+    bigfile = { enabled = true },
+    image = { enabled = true },
+    picker = { enabled = true },
     dashboard = {
       -- width = 60,
       -- row = nil, -- dashboard position. nil for center
