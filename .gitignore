@@ -5,3 +5,4 @@ zed
 tmux/plugins
 **.luarc.json
 fish_variables
+lazy-lock.json
