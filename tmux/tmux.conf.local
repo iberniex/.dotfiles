@@ -401,7 +401,11 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # set -g prefix C-a
 # bind C-a send-prefix
 # if you don't want Oh my tmux! to alter a binding or a setting, use #!important bind c new-window -c '#{pane_current_path}' #!important move status line to top set -g status-position top
+set -g terminal-overrides ',xterm*:Tc:sitm=\E[3m'
+set -ga terminal-overrides ',xterm*:Ms=\E]52;%p1%s;%p2%s\007'
+set -as terminal-features ',xterm-256color:RGB'
 
+set -gp allow-passthrough on #!important
 set -g status-position top
 # -- tpm -----------------------------------------------------------------------
 
