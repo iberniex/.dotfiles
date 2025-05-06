@@ -141,6 +141,10 @@ alias v="nvim"
 alias sp="spotify_player"
 alias lzg="lazygit"
 
+# llvm and rust Path
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+
 # Cargo Path
 export PATH="$HOME/.cargo/bin:$PATH"
 
