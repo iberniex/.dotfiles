@@ -148,6 +148,14 @@ export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 # Cargo Path
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# Lf configurations
+# to save the current directory
+LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"  # source
+LFCD="/path/to/lfcd.sh"                                #  pre-built binary, make sure to use absolute path
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+fi
+
 # NVIM configuration
 export EDITOR='nvim'
 export VISUAL='nvim'
