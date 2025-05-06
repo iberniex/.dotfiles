@@ -1,20 +1,20 @@
 return {
   {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     dependencies = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
-      'rafamadriz/friendly-snippets',
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "rafamadriz/friendly-snippets",
     },
     config = function()
-      local cmp = require('cmp')
-      local luasnip = require('luasnip')
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
 
-      require('luasnip.loaders.from_vscode').lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load()
 
       cmp.setup({
         snippet = {
@@ -23,9 +23,9 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert({
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
-          ['<Tab>'] = cmp.mapping(function(fallback)
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
@@ -33,8 +33,8 @@ return {
             else
               fallback()
             end
-          end, { 'i', 's' }),
-          ['<S-Tab>'] = cmp.mapping(function(fallback)
+          end, { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
@@ -42,39 +42,41 @@ return {
             else
               fallback()
             end
-          end, { 'i', 's' }),
+          end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
-			{ name = 'nvim_lsp',
-			option = {
-				markdown_oxide = {
-					keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
-				}
-			}},
-          { name = 'luasnip' },
+          {
+            name = "nvim_lsp",
+            option = {
+              markdown_oxide = {
+                keyword_pattern = [[\(\k\| \|\/\|#\)\+]],
+              },
+            },
+          },
+          { name = "luasnip" },
+          { name = "render-markdown" },
         }, {
-          { name = 'buffer' },
-          { name = 'path' },
-        })
+          { name = "buffer" },
+          { name = "path" },
+        }),
       })
 
       -- Optional: cmdline completion
-      cmp.setup.cmdline('/', {
+      cmp.setup.cmdline("/", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
-          { name = 'buffer' }
-        }
+          { name = "buffer" },
+        },
       })
 
-      cmp.setup.cmdline(':', {
+      cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
-          { name = 'path' }
+          { name = "path" },
         }, {
-          { name = 'cmdline' }
-        })
+          { name = "cmdline" },
+        }),
       })
-    end
-  }
+    end,
+  },
 }
-
