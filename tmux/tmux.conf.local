@@ -169,7 +169,7 @@ tmux_conf_theme_mode_attr="bold"
 # status line style
 tmux_conf_theme_status_fg="$tmux_conf_theme_colour_3"
 tmux_conf_theme_status_bg="$tmux_conf_theme_colour_1"
-tmux_conf_theme_status_attr="none"
+tmux_conf_theme_status_attr="bold"
 
 # terminal title
 #   - built-in variables are:
@@ -370,7 +370,7 @@ tmux_conf_theme_clock_style="24"
 #   - false (default)
 #   - disabled
 # on Linux, this requires xsel, xclip or wl-copy
-tmux_conf_copy_to_os_clipboard=false
+tmux_conf_copy_to_os_clipboard=true
 
 
 # -- urlscan -------------------------------------------------------------------
@@ -403,8 +403,9 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # if you don't want Oh my tmux! to alter a binding or a setting, use #!important bind c new-window -c '#{pane_current_path}' #!important move status line to top set -g status-position top
 
 
-set -gp allow-passthrough on #!important
+set -gp allow-passthrough on 
 set -g visual-activity off
+
 set -g status-position top
 # -- tpm -----------------------------------------------------------------------
 
@@ -520,7 +521,6 @@ fore_3="#BDAE93"
 fore_4="#A89984"
 "
 
-set -g status-style "fg=default,bg=default,bold" #!important
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
