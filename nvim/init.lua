@@ -20,11 +20,11 @@ require("config.lazy")
 -- Telescope configuration
 
 require("telescope").setup({
-	pickers = {
-		find_files = {
-			theme = "dropdown",
-		},
-	},
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+    },
+  },
 })
 -- telescope-fxf-ext loading_extension
 require("telescope").load_extension("fzf")
@@ -39,14 +39,8 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help ta
 
 -- Text LSPConfig hover on buffer change
 vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
-	update_in_insert = false,
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
 })
-
-
--- Lsp Saga configuration
-vim.keymap.set("n", "<leader>tt", ":Lspsaga term_toggle<CR>", { desc = "Terminal Toggle" })
-
-
