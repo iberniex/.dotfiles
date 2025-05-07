@@ -6,11 +6,9 @@ return {
     bigfile = { enabled = true },
     image = { enabled = true },
     picker = { enabled = true },
+    notifier = { enabled = true },
+    input = { enabled = true },
     dashboard = {
-      -- width = 60,
-      -- row = nil, -- dashboard position. nil for center
-      -- col = nil, -- dashboard position. nil for center
-      -- pane_gap = 4, -- empty columns between vertical panes
       autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", -- autokey sequence
       -- These settings are used by some built-in sections
       preset = {
