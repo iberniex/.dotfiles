@@ -142,7 +142,7 @@ font-feature =
 # On Linux with GTK, font size is scaled according to both display-wide and
 # text-specific scaling factors, which are often managed by your desktop
 # environment (e.g. the GNOME display scale and large text settings).
-font-size = 14
+font-size = 14.5
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -397,7 +397,7 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 # 
 #   - macOS: titlebar tabs style is not updated when switching themes.
 # 
-theme = 
+theme = GruvboxDarkHard
 
 # Background color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
@@ -828,7 +828,7 @@ mouse-scroll-multiplier = 1
 # widgets to show through which isn't generally desirable.
 # 
 # On macOS, changing this configuration requires restarting Ghostty completely.
-background-opacity = 1
+background-opacity = 0.9
 
 # Whether to blur the background when `background-opacity` is less than 1.
 # 
@@ -861,7 +861,7 @@ background-opacity = 1
 # need to set environment-specific settings and/or install third-party plugins
 # in order to support background blur, as there isn't a unified interface for
 # doing so.
-background-blur = false
+background-blur = true
 
 # The opacity level (opposite of transparency) of an unfocused split.
 # Unfocused splits by default are slightly faded out to make it easier to see
