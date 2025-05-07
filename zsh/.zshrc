@@ -102,7 +102,8 @@ else
   export EDITOR='vim'
 fi
 
-if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" = "ghostty" ]; then
+	echo "oof"
   tmux attach -t main || tmux new -s main
 fi
 
