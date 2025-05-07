@@ -140,6 +140,8 @@ lg()
 alias v="nvim"
 alias sp="spotify_player"
 alias lzg="lazygit"
+alias manual='MANPAGER="less -XNR --use-color -Dd+y -Du+208 -DN+r" man' 
+alias man='MANPAGER="less -XNR --use-color -Dd+y -Du+208 -DN+r" man' 
 
 # llvm and rust Path
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
