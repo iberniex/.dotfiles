@@ -103,8 +103,7 @@ else
 fi
 
 if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" = "ghostty" ]; then
-	echo "oof"
-  tmux attach -t main || tmux new -s main
+  tmux attach -t main || tmux new -s main || echo "Failed to start tmux"
 fi
 
 # Zsh-autocomplete settings
