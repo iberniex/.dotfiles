@@ -152,12 +152,24 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Lf configurations
 # to save the current directory
-LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"  # source
-LFCD="/path/to/lfcd.sh"                                #  pre-built binary, make sure to use absolute path
-if [ -f "$LFCD" ]; then
-    source "$LFCD"
-fi
+if type lf &> /dev/null; then
+	# set up icons
+	LF_ICONS=$(sed -e '/^[ \t]*#/d' \
+		-e '/^[ \t]*$/d' \
+		-e 's/[ \t]\+/=/g' \
+		-e 's/$/ /' \
+		"$HOME/.config/lf/icons")
 
+
+	# Setup lfcd
+	LFCD="$HOME/.config/lf/scripts/lfcd.sh"
+	if [ -f "$LFCD" ]; then
+		source "$LFCD"
+		bindkey -s "^o" "lfcd\n"  # set up key-binding for zsh
+		alias lf="lfcd"  # overwrite lf with lfcd
+	fi
+fi
+	
 # NVIM configuration
 export EDITOR='nvim'
 export VISUAL='nvim'
