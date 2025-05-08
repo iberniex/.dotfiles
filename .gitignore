@@ -7,3 +7,4 @@ fish_variables
 lazy-lock.json
 .luarc.json
 yarn
+glab-cli
