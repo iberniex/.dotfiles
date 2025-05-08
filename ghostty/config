@@ -401,7 +401,7 @@ theme = GruvboxDarkHard
 
 # Background color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-background = #282c34
+background = #1d2021
 
 # Foreground color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.

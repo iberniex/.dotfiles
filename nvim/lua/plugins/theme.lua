@@ -1,19 +1,19 @@
-return { 
-"EdenEast/nightfox.nvim",
-config = function()
-	require("nightfox").setup({
+return {
+  "ellisonleao/gruvbox.nvim",
+  priority = 1000,
 
-		options = {
-			transparent = true,
-			terminal_colors = true,
-			dim_inactive = true,
-
-			styles = {
-				keywords = "bold",
-				types = "italic, bold"
-			},
-		},
-	})
-	vim.cmd("colorscheme carbonfox")
-end,
+  config = function()
+    require("gruvbox").setup({
+      terminal_colors = true,
+      transparent_mode = true,
+      italic = {
+        strings = true,
+        emphasis = true,
+        comments = true,
+        operators = true,
+        folds = true,
+      },
+    })
+    vim.o.background = "dark", vim.cmd([[colorscheme gruvbox]])
+  end,
 }
