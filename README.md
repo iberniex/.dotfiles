@@ -1,7 +1,7 @@
-# Imperfection
+# Dot Files
 
-> _the state of creating something that would outrice the Linux Ricing_~ some weird 25 yr old guy.
+> _I'm tired of this grandpa_ _" **WELL IS TOO DAMN BAD!** You keep digging" _
 
-![Mac-Ricing](/assets/mac-ricing.png)
+    ![Mac-Ricing](/assets/mac-ricing.png)
 
-# ⚠️ - Documentation in Progress - ⚠️
+## Ingredients
