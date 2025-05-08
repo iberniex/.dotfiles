@@ -1,8 +1,6 @@
 # Dot Files
 
-> _I'm tired of this grandpa_
-
-> _**WELL IS TOO DAMN BAD!** You keep digging_
+> "Too much gruv" "Ikr?"
 
 ![Mac-Ricing](/assets/mac-ricing.png)
 
