@@ -1,5 +1,15 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+#!/bin/zsh
+#===================================================================================
+#  DESCRIPTION:  Laaaa la la la, wait till I get my money right
+#       AUTHOR:  I forgor
+#                 .__
+#  ________  _____|  |_________   ____
+#  \___   / /  ___/  |  \_  __ \_/ ___\
+#   /    /  \___ \|   Y  \  | \/\  \___
+#  /_____ \/____  >___|  /__|    \___  >
+#        \/     \/     \/            \/
+#
+#===================================================================================
 
 
 # Path to your Oh My Zsh installation.
@@ -11,11 +21,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="dogenpunk"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
