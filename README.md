@@ -14,12 +14,12 @@
 
 ## Recipe
 
-1. Get a Mac for the first time while being caged in Windows for a while. (for legal reasons this is a joke).
+1. Get a Mac for the first time while being caged in Windows for a while (for legal reasons this is a joke).
 2. Start of with a normal terminal for some time.
-3. Then some [Mac guru](https://github.com/mosesokemwa) tells you to use [iterm2](https://iterm2.com/) and stop being a funny.'
+3. Then some [Mac guru](https://github.com/mosesokemwa) tells you to use [iterm2](https://iterm2.com/) and stop being weird.
 4. Customize that isht like you own everything (you don't).
 
-- You start increasing your typing speed to like 75 wpm and above
+   - You start increasing your typing speed to like 75 wpm and above
 
 5. Start using neovim cause you like mental games and stuff(no vscode hate).
 6. Start learning Lua and for some reason you are into C and Rust.
