@@ -1,122 +1,157 @@
-tap "codecrafters-io/tap"
 tap "daveshanley/vacuum"
 tap "felixkratz/formulae"
 tap "jstkdng/programs"
 tap "koekeishiya/formulae"
 tap "nikitabobko/tap"
+
+# Packages 
+# Text Packages
 brew "gettext"
-brew "bash"
-brew "node"
-brew "bash-language-server"
 brew "bat"
-brew "bc"
+brew "less"
+brew "tectonic"
+
+# System Packages
 brew "btop"
-brew "c10t"
+brew "htop"
+
+# Terminal Emulators & Multiplexers
+cask "kitty"
+brew "tmux"
+
+# Shell Configurations
+brew "bash"
+brew "fish"
+brew "zsh-autocomplete"
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+brew "nushell"
+
+# language interpreters
 brew "python@3.13"
-brew "llvm"
-brew "ccls"
+
+# Interesting packages
+brew "bc"
+brew "c10t"
+
+# Image processers
 brew "chafa"
+brew "libsixel"
+brew "imagemagick"
+brew "jstkdng/programs/ueberzugpp"
+
+# LSP, Linters and Code checkers
+brew "ccls"
+brew "bash-language-server"
+brew "dotenv-linter"
 brew "chezmoi"
-brew "clang-format"
-brew "cmake"
-brew "cmake-docs"
-brew "cmatrix"
-brew "colima", restart_service: :changed
-brew "coreutils"
-brew "cowsay"
 brew "cppcheck"
-brew "cunit"
+brew "doxygen"
+brew "luacheck"
+brew "selene"
+brew "ninja"
+brew "stylua"
+brew "prettierd"
+brew "shellcheck"
+
+# Sick packages
+brew "cmatrix"
+brew "cowsay"
+brew "glow"
+brew "fortune"
+cask "whisky"
+brew "lolcat"
+brew "spotify_player"
+
+# Docker Packages
 brew "docker"
 brew "docker-buildx"
 brew "docker-compose"
-brew "dotenv-linter"
-brew "doxygen"
-brew "fastfetch"
+brew "colima", restart_service: :changed
+
+# Benchmark, Filesystem & Searching Packages
 brew "fd"
-brew "gcc"
-brew "fish"
-brew "fortune"
 brew "fzf"
+brew "jq"
+brew "lf"
+brew "ripgrep"
+brew "sk"
+brew "hyperfine"
+brew "json-glib"
+brew "tree"
+
+# Compilers & debuggers
+brew "llvm"
+brew "gcc"
+brew "cmake"
+brew "cmake-docs"
 brew "gawk"
+brew "clang-format"
+brew "lld"
+brew "nasm"
+
+# Version Control Packages
 brew "gh"
-brew "ghex"
-brew "ghostscript"
 brew "git"
-brew "git-lfs"
 brew "glab"
-brew "glow"
+brew "lazygit"
+
+# Editors
+brew "ghex"
+brew "neovim"
+brew "jupyterlab"
+
+# Unit Testing
+brew "cunit"
+
+# Note Taking Packages
+brew "zk"
+
+# Language environments
+brew "node"
+brew "coreutils"
+brew "ghostscript"
+brew "git-lfs"
 brew "gnu-sed"
 brew "go"
 brew "gtk+"
 brew "gtk+3"
-brew "htop"
-brew "hyperfine"
-brew "imagemagick"
-brew "jq"
-brew "json-glib"
-brew "jupyterlab"
-brew "lazygit"
-brew "less"
-brew "lf"
-brew "libsixel"
-brew "lld"
-brew "lolcat"
+
 brew "lua-language-server"
-brew "luacheck"
 brew "luarocks"
-brew "ninja"
 brew "meson"
 brew "mpc"
 brew "mpd", restart_service: :changed
 brew "mpv"
 brew "mupdf"
-brew "nasm"
 brew "ncdu"
-brew "neovim"
-brew "nushell"
 brew "pipes-sh"
 brew "pipx"
 brew "pngpaste"
 brew "podman"
-brew "prettierd"
 brew "pyenv"
 brew "qemu"
 brew "qt"
-brew "ripgrep"
 brew "rust"
 brew "rustup"
-brew "selene"
-brew "shellcheck"
-brew "sk"
-brew "spotify_player"
-brew "stylua"
-brew "tectonic"
-brew "tmux"
-brew "tree"
 brew "vite"
 brew "wget"
 brew "xxh"
 brew "yaml-language-server"
 brew "yarn"
-brew "zk"
-brew "zsh-autocomplete"
-brew "zsh-autosuggestions"
-brew "zsh-completions"
-brew "zsh-syntax-highlighting"
-brew "codecrafters-io/tap/codecrafters"
 brew "daveshanley/vacuum/vacuum"
 brew "felixkratz/formulae/sketchybar"
-brew "jstkdng/programs/ueberzugpp"
+
+# Applications
 cask "aerospace"
 cask "font-monaspace-nerd-font"
 cask "font-noto-sans-symbols-2"
 cask "iterm2"
-cask "kitty"
 cask "metasploit"
 cask "pycharm"
 cask "skim"
 cask "visual-studio-code"
-cask "whisky"
 cask "xquartz"
 
 # Vscode and nvim-dap packages
