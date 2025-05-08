@@ -401,11 +401,11 @@ theme = GruvboxDarkHard
 
 # Background color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-background = #3c3836
+background = #282828
 
 # Foreground color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-foreground = #ffffff
+foreground = #A89984
 
 # The foreground and background color for selection. If this is not set, then
 # the selection color is just the inverted window background and foreground
@@ -420,7 +420,7 @@ selection-background =
 # 
 # If you select across cells with differing foregrounds and backgrounds, the
 # selection color will vary across the selection.
-selection-invert-fg-bg = false
+selection-invert-fg-bg = true
 
 # The minimum contrast ratio between the foreground and background colors.
 # The contrast ratio is a value between 1 and 21. A value of 1 allows for no
@@ -705,7 +705,7 @@ palette = 255=#eeeeee
 
 # The color of the cursor. If this is not set, a default will be chosen.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-cursor-color = 
+cursor-color = #B16286 
 
 # Swap the foreground and background colors of the cell under the cursor. This
 # option overrides the `cursor-color` and `cursor-text` options.
@@ -1242,6 +1242,7 @@ working-directory =
 # Ghostty will attempt to request these permissions. If the permissions are
 # not granted, the keybind will not work. On macOS, you can find these
 # permissions in System Preferences -> Privacy & Security -> Accessibility.
+
 keybind = super+page_up=scroll_page_up
 keybind = super+ctrl+equal=equalize_splits
 keybind = super+physical:four=goto_tab:4
@@ -1713,7 +1714,7 @@ clipboard-trim-trailing-spaces = true
 # Require confirmation before pasting text that appears unsafe. This helps
 # prevent a "copy/paste attack" where a user may accidentally execute unsafe
 # commands by pasting text with newlines.
-clipboard-paste-protection = true
+clipboard-paste-protection = false
 
 # If true, bracketed pastes will be considered safe. By default, bracketed
 # pastes are considered safe. "Bracketed" pastes are pastes while the running
@@ -2140,7 +2141,7 @@ macos-non-native-fullscreen = false
 # most cases.
 # 
 # Changing this option at runtime only applies to new windows.
-macos-titlebar-style = transparent
+macos-titlebar-style = hidden
 
 # Whether the proxy icon in the macOS titlebar is visible. The proxy icon
 # is the icon that represents the folder of the current working directory.
