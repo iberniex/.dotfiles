@@ -103,9 +103,6 @@ return {
         -- dotenv
         null_ls.builtins.diagnostics.dotenv_linter,
         null_ls.builtins.formatting.shfmt,
-
-        -- markdown_oxide
-        null_ls.builtins.diagnostics.ltrs,
       },
       on_attach = function(client, bufnr)
         -- If you want formatting on save
