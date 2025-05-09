@@ -55,16 +55,17 @@ return {
     --
     -- dotenv: bash, env
     lspconfig.bashls.setup({})
+
     -- Lua: Lua Ls
     lspconfig.lua_ls.setup({
       settings = {
         Lua = {
           runtime = {
-            version = "LuaJIT",
+            version = "Lua51",
             path = vim.split(package.path, ";"),
           },
           diagnostics = {
-            globals = { "vim" },
+            globals = { "vim", "use", "describe", "it", "before_each", "after_each" },
           },
           workspace = {
             library = {
