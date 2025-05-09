@@ -39,7 +39,7 @@ return {
     }
 
     -- Function to create a new note using a template
-    function create_note(workspace_name)
+    function CreateNote(workspace_name)
       local workspace = workspaces[workspace_name]
       if workspace then
         vim.cmd("cd " .. workspace.path)
@@ -57,19 +57,19 @@ return {
     vim.api.nvim_set_keymap(
       "n",
       "<leader>zf",
-      ":lua create_note('fleeting')<CR>",
+      ":lua CreateNote('fleeting')<CR>",
       { noremap = true, silent = true }
     )
     vim.api.nvim_set_keymap(
       "n",
       "<leader>zl",
-      ":lua create_note('literature')<CR>",
+      ":lua CreateNote('literature')<CR>",
       { noremap = true, silent = true }
     )
     vim.api.nvim_set_keymap(
       "n",
       "<leader>zp",
-      ":lua create_note('permanent')<CR>",
+      ":lua CreateNote('permanent')<CR>",
       { noremap = true, silent = true }
     )
   end,
