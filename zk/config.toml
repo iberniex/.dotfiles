@@ -1,0 +1,37 @@
+[notebook]
+dir = "~/Documents/vault"
+
+# Note settings
+[note]
+default="Untitled"
+filename="{{format-date now '%Y-%m-%d'}}"
+extension="md"
+
+[extra]
+author="hxbr"
+
+[tool]
+editor="nvim"
+shell="/bin/zsh"
+pager="less -FIRX"
+fzf-preview="bat -p --color always {-1}"
+
+[lsp]
+
+[lsp.diagnostics]
+wiki-title="hint"
+dead-link="error"
+
+
+[filter]
+recents="--sort created- --created-after 'last two weeks'"
+
+[alias]
+# Edit the last modified note.
+edlast = "zk edit --limit 1 --sort modified- $@"
+
+# Edit the notes selected interactively among the notes created the last two weeks.
+recent = "zk edit --sort created- --created-after 'last two weeks' --interactive"
+
+# Show a random note.
+lucky = "zk list --quiet --format full --sort random --limit 1"
