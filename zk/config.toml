@@ -1,11 +1,14 @@
 [notebook]
-dir = "~/Documents/vault"
+dir = "/Users/vberniex/Documents/vault"
 
 # Note settings
 [note]
 default="Untitled"
-filename="{{format-date now '%Y-%m-%d'}}"
+filename="{{format-date now '%Y%m%d'}}-{{title}}"
 extension="md"
+
+[templates]
+paths = ["~/.config/zk/templates"]
 
 [extra]
 author="hxbr"
@@ -22,6 +25,13 @@ fzf-preview="bat -p --color always {-1}"
 wiki-title="hint"
 dead-link="error"
 
+[lsp.completion]
+# Show the note title in the completion pop-up, or fallback on its path if empty.
+note-label = "{{title-or-path}}"
+# Filter out the completion pop-up using the note title or its path.
+note-filter-text = "{{title}} {{path}}"
+# Show the note filename without extension as detail.
+note-detail = "{{filename-stem}}"
 
 [filter]
 recents="--sort created- --created-after 'last two weeks'"
@@ -35,3 +45,4 @@ recent = "zk edit --sort created- --created-after 'last two weeks' --interactive
 
 # Show a random note.
 lucky = "zk list --quiet --format full --sort random --limit 1"
+

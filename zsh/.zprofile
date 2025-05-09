@@ -12,3 +12,4 @@ export XDG_CONFIG_DIRS="$HOME/.config:/etc/xdg"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+export ZK_NOTEBOOK_DIR="$HOME/Documents/vault"
