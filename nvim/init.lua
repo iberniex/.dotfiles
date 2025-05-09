@@ -1,9 +1,6 @@
 -- Configuration variables
 --
 
--- escape configuration to change from ESC to " jj'
-vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
-
 -- buffer configurations
 vim.o.number = true
 vim.o.relativenumber = true
@@ -14,9 +11,6 @@ vim.o.shiftwidth = 4
 -- Lazy configuration
 require("config.lazy")
 
--- colorscheme configuration
--- require("ayu").colorscheme()
-
 -- Telescope configuration
 
 require("telescope").setup({
@@ -26,6 +20,7 @@ require("telescope").setup({
     },
   },
 })
+
 -- telescope-fxf-ext loading_extension
 require("telescope").load_extension("fzf")
 
