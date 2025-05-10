@@ -4,8 +4,14 @@ dir = "/Users/vberniex/Documents/vault"
 # Note settings
 [note]
 default="Untitled"
-filename="{{format-date now '%Y%m%d'}}-{{title}}"
+# Note name format
+filename="{{id}}-{{format-date now '%Y%m%d'}}-{{title}}"
 extension="md"
+
+# ID Note Format
+id-charset="alphanum"
+id-length=8
+id-case="lower"
 
 [templates]
 paths = ["~/.config/zk/templates"]
