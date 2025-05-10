@@ -24,22 +24,22 @@ return {
     local workspaces = {
       fleeting = {
         name = "fleeting",
-        path = "~/Documents/vault/fleeting",
+        path = "~/Documents/vault/001-Fleeting",
         template = "fleeting.md",
       },
       literature = {
         name = "literature",
         path = {
-          book = "~/Documents/vault/literature/books",
-          quote = "~/Documents/vault/literature/quotes",
-          person = "~/Documents/vault/literature/person",
-          literature = "~/Documents/vault/literature/lit",
+          book = "~/Documents/vault/100-Literature/books",
+          quote = "~/Documents/vault/100-Literature/quotes",
+          person = "~/Documents/vault/100-Literature/person",
+          literature = "~/Documents/vault/100-Literature/lit",
         },
         template = "literature.md",
       },
       permanent = {
         name = "permanent",
-        path = "~/Documents/vault/permanent",
+        path = "~/Documents/vault/200-Permanent",
         template = "permanent.md",
       },
     }

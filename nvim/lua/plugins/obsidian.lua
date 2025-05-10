@@ -2,7 +2,7 @@ return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = false,
-  -- ft = "markdown",
+  ft = "markdown",
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
   event = {
     -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
@@ -20,57 +20,63 @@ return {
     "nvim-telescope/telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
+
   opts = {
     workspaces = {
       {
         name = "fleeting",
-        path = "~/Documents/vault/Fleeting",
+        path = "~/Documents/vault/001-Fleeting",
+      },
+      {
+        name = "literature",
+        path = "~/Documents/vault/100-Literature",
+      },
+      {
+        name = "literature",
+        path = "~/Documents/vault/000-Index",
       },
       {
         name = "permanent",
-        path = "~/Documents/vault/Permanent",
-        overrides = {
-          notes_subdir = "notes",
-        },
+        path = "~/Documents/vault/200-Permanent",
       },
     },
-
-    -- default folder for notes
-    notes_subdir = "notes",
-
-    -- auto completion with cmp
-    completion = {
-      nvim_cmp = true,
-      min_chars = 2,
-    },
-
-    -- setting the log level for obsidian.nvim
-    log_level = vim.log.levels.INFO,
-
-    -- default mappings
-    mappings = {
-      -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-      ["gf"] = {
-        action = function()
-          return require("obsidian").util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-      -- Toggle check-boxes.
-      ["<leader>ch"] = {
-        action = function()
-          return require("obsidian").util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-      -- Smart action depending on context, either follow link or toggle checkbox.
-      ["<cr>"] = {
-        action = function()
-          return require("obsidian").util.smart_action()
-        end,
-        opts = { buffer = true, expr = true },
-      },
-    },
-    new_notes_location = "current_dir",
   },
+
+  -- default folder for notes
+  notes_subdir = "000-Index",
+
+  -- auto completion with cmp
+  completion = {
+    nvim_cmp = true,
+    min_chars = 2,
+  },
+
+  -- setting the log level for obsidian.nvim
+  log_level = vim.log.levels.INFO,
+
+  -- default mappings
+  mappings = {
+    -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
+    ["gf"] = {
+      action = function()
+        return require("obsidian").util.gf_passthrough()
+      end,
+      opts = { noremap = false, expr = true, buffer = true },
+    },
+    -- Toggle check-boxes.
+    ["<leader>ch"] = {
+      action = function()
+        return require("obsidian").util.toggle_checkbox()
+      end,
+      opts = { buffer = true },
+    },
+    -- Smart acion depending on context, either follow link or toggle checkbox.
+    ["<leader>cf"] = {
+      action = function()
+        return require("obsidian").util.smart_action()
+      end,
+      opts = { buffer = true, expr = true },
+    },
+  },
+  new_notes_location = "000-Index",
 }
