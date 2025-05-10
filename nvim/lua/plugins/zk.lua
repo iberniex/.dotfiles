@@ -2,7 +2,6 @@ return {
   "zk-org/zk-nvim",
   config = function()
     require("zk").setup({
-
       picker = "fzf_lua",
 
       lsp = {
@@ -10,7 +9,7 @@ return {
         config = {
           cmd = { "zk", "lsp" },
           name = "zk",
-          -- on_attach = ...
+          on_attach = true,
           -- etc, see `:h vim.lsp.start_client()`
         },
 
