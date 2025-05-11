@@ -3,7 +3,7 @@ client_id_command =  { command = "cat", args = [
   "/Users/vberniex/.spotify-creds",
 ] }
 
-theme = "dracula"
+theme = "background"
 client_port = 8081
 login_redirect_uri = "http://127.0.0.1:8989/login"
 playback_format = """
