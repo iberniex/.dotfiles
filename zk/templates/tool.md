@@ -2,7 +2,7 @@
 title: "{{title}}"
 source:
 author:
-date: {{date}}
+date: {{format-date now "long"}}
 type: literature
 tags: [literature]
 ---

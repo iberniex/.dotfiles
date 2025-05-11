@@ -34,6 +34,7 @@ return {
           quote = "~/Documents/vault/100-Literature/quotes",
           person = "~/Documents/vault/100-Literature/person",
           literature = "~/Documents/vault/100-Literature/lit",
+          tool = "~/Documents/vault/100-Literature/tool",
         },
         template = "literature.md",
       },
