@@ -1,0 +1,116 @@
+#!/bin/zsh
+#===================================================================================
+#  DESCRIPTION:  Laaaa la la la, wait till I get my money right
+#       AUTHOR:  I forgor
+#                 .__
+#  ________  _____|  |_________   ____
+#  \___   / /  ___/  |  \_  __ \_/ ___\
+#   /    /  \___ \|   Y  \  | \/\  \___
+#  /_____ \/____  >___|  /__|    \___  >
+#        \/     \/     \/            \/
+#
+#===================================================================================
+
+# Initialize ohmyzsh
+
+ZSH_THEME="dogenpunk"
+
+# you may need to manually set your language environment
+export lang=en_us.utf-8
+
+source $ZSH/oh-my-zsh.sh
+
+plugins=(
+	git
+	macos
+	tmux
+	zsh-interactive-cd
+	jsontools
+)
+
+
+# Environmental variables
+if [ -f ~/.env ]; then
+    source ~/.env
+fi
+
+# preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='vim'
+fi
+
+if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" = "ghostty" ]; then
+  tmux attach -t main || tmux new -s main || echo "Failed to start tmux"
+fi
+
+# Zsh-autocomplete settings
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# Lazygit configuration
+# CD to working directory
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
+}
+
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+
+alias v="nvim"
+alias sp="spotify_player"
+alias lzg="lazygit"
+alias manual='MANPAGER="less -XNR --use-color -Dd+y -Du+208 -DN+r" man' 
+alias man='MANPAGER="less -XNR --use-color -Dd+y -Du+208 -DN+r" man' 
+
+# Lf configurations
+# to save the current directory
+if type lf &> /dev/null; then
+	# set up icons
+	LF_ICONS=$(sed -e '/^[ \t]*#/d' \
+		-e '/^[ \t]*$/d' \
+		-e 's/[ \t]\+/=/g' \
+		-e 's/$/ /' \
+		"$HOME/.config/lf/icons")
+
+
+	# Setup lfcd
+	LFCD="$HOME/.config/lf/scripts/lfcd.sh"
+	if [ -f "$LFCD" ]; then
+		source "$LFCD"
+		bindkey -s "^o" "lfcd\n"  # set up key-binding for zsh
+		alias lf="lfcd"  # overwrite lf with lfcd
+	fi
+fi
+	
+
+# FZF configuration
+source <(fzf --zsh --style full \
+    --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}')
+
+# zsh-autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+#zsh-syntax-highlighing
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
