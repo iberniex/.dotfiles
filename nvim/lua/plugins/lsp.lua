@@ -69,7 +69,7 @@ return {
               vim.env.VIMRUNTIME,
               vim.fn.stdpath("config"),
             },
-            checkThirdParty = false,
+            checkThirdParty = true,
           },
           telemetry = {
             enable = false,
