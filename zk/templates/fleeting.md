@@ -6,16 +6,47 @@ type: fleeting
 tags:
 ---
 
-# {{title}}
+# {{Title}}
+<!--  Clear and descriptive title -->
+> [!Summary]
+> `= this.lead`
 
-## Thoughts
+**Details**
+<!-- Main content in body of my note  -->
+- 
 
--
+**Supporting Content**
+<!-- Supporting content in tail of my note  -->
+- 
 
-## Questions
 
--
 
-## Connections
+---
+# Back Matter
 
--
+**Source**
+<!-- Always keep a link to the source- --> 
+- based_on::
+
+**References**
+<!-- Links to pages not referenced in the content. see: [[related note]] because <reason> -->
+- see:: 
+
+**Terms**
+<!-- Links to definition pages. -->
+- 
+
+**Target**
+<!-- Link to project note or externaly published content. -->
+- used_in::
+
+---
+**Tasks**
+<!-- What remains to be done with this note? --> 
+- 
+
+**Questions**
+<!-- What remains for you to consider? --> 
+- question::
+
+---

@@ -1,27 +1,37 @@
 ---
-title: "{{title}}"
+title: "{{Title}}"
 source:
 author:
-date: {{format-date now "long"}}
-type: literature
-tags: [literature]
+created: {{format-date now "long"}}
+modified: {{format-date now "
+type: Tool
+tags:
+    - type/tool
+    - theme/xyz
+aliases:
 ---
 
-# {{title}}
+# {{Title}}
 
-## Summary
+<!-- Short description of TOOL goes here -->
 
-## Key Points
+> [!Note]
+> `= this.lead`
 
--
 
-## Quotes
+## Usage
+<!-- Why I am using this tool? The use case -->
+- 
 
->
 
-## Questions & Thoughts
+## Pros
+-  
 
--
+
+## Cons
+- 
+
+
 
 ## References
 

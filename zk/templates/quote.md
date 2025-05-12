@@ -2,27 +2,49 @@
 title: "{{title}}"
 source:
 author:
-date: {{format-date now "medium"}}
-type: literature
-tags: [literature]
+created: {{format-date now "medium"}}
+type: quote
+tags: 
+    - type/quote 
+    - theme/xyz
 ---
-
 # {{title}}
 
-## Summary
+<!-- Quote and author from frontmatter goes here. Also used for Dataview list of quotes. -->
 
-## Key Points
+> [!QUOTE]
+>  `= this.quote`
+>  — `= this.author`
 
--
 
-## Quotes
 
->
 
-## Questions & Thoughts
+---
+# Back Matter
 
--
+**Source**
+<!-- Always keep a link to the source- --> 
+- based_on::
 
-## References
+**References**
+<!-- Links to pages not referenced in the content. see: [[related note]] because <reason> -->
+- see:: 
 
-- [@citationkey]
+**Terms**
+<!-- Links to definition pages. -->
+- 
+
+**Target**
+<!-- Link to project note or externaly published content. -->
+- used_in::
+
+---
+**Tasks**
+<!-- What remains to be done with this note? --> 
+- 
+
+**Questions**
+<!-- What remains for you to consider? --> 
+- 
+
+---

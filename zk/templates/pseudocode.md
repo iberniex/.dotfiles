@@ -1,15 +1,15 @@
 ---
-title: "{{title}}"
-id: {{id}}
+title: "Fleeting-pseudocode: {{title}}"
 created: {{format-date now "medium"}}
+time: {{format-date now "time"}}
 modified:
-type: permanent
-aliases:
+type: pseudocode
 tags:
 lead:
 ---
-# {{Title}}
 
+# {{Title}}
+<!--  Clear and descriptive title -->
 > [!Summary]
 > `= this.lead`
 
@@ -17,9 +17,18 @@ lead:
 <!-- Main content in body of my note  -->
 - 
 
+
+**Pseudocode**
+<!-- Supporting content in tail of my note  -->
+```
+# write pseudocode here
+```
+
 **Supporting Content**
 <!-- Supporting content in tail of my note  -->
 - 
+
+
 
 ---
 # Back Matter

@@ -3,13 +3,13 @@ title: "{{title}}"
 id: {{id}}
 created: {{format-date now "medium"}}
 modified:
-type: permanent
+type: note
 aliases:
 tags:
 lead:
 ---
 # {{Title}}
-
+<!--  Clear and descriptive title -->
 > [!Summary]
 > `= this.lead`
 

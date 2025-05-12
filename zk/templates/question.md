@@ -7,19 +7,19 @@ type: permanent
 aliases:
 tags:
 lead:
+question:
 ---
 # {{Title}}
 
-> [!Summary]
+<!-- Detailed question from "lead"-key  in properties section -->
+
+> [!Question]
+> `= this.question`
+
+<!-- Answer the detailed question  -->
+> [!Answer]
 > `= this.lead`
 
-**Details**
-<!-- Main content in body of my note  -->
-- 
-
-**Supporting Content**
-<!-- Supporting content in tail of my note  -->
-- 
 
 ---
 # Back Matter
@@ -47,6 +47,6 @@ lead:
 
 **Questions**
 <!-- What remains for you to consider? --> 
-- question::
+- 
 
 ---

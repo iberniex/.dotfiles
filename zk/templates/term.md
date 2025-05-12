@@ -1,25 +1,37 @@
 ---
 title: "{{title}}"
-id: {{id}}
-created: {{format-date now "medium"}}
-modified:
-type: permanent
-aliases:
-tags:
+source:
+author:
+date: {{format-date now "medium"}}
+type: Term
 lead:
+source:
+aliases:
+tags: 
+    - type/term
+    - theme/xyz
 ---
+
 # {{Title}}
+<!--  Clear and descriptive title -->
 
-> [!Summary]
+<!-- A supporting visual from front matter if available -->
+
+```dataviewjs 
+dv.paragraph(dv.current().visual);
+```
+
+
+<!-- Term definition and source from front matter goes here. Also used for Dataview glossary. -->
+
+> [!Definition]
 > `= this.lead`
+>  — `= this.source`
 
-**Details**
-<!-- Main content in body of my note  -->
-- 
+<!-- Additional term description if needed -->
 
-**Supporting Content**
-<!-- Supporting content in tail of my note  -->
-- 
+
+
 
 ---
 # Back Matter

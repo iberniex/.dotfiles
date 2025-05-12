@@ -3,23 +3,29 @@ title: "{{title}}"
 id: {{id}}
 created: {{format-date now "medium"}}
 modified:
-type: permanent
+type: 
+    - type/prompt
+    - theme/xyz
 aliases:
+question: 
+
 tags:
 lead:
 ---
 # {{Title}}
 
-> [!Summary]
+<!-- Detailed question from short title in front matter -->
+
+> [!Note]
 > `= this.lead`
 
-**Details**
-<!-- Main content in body of my note  -->
-- 
+> [!Prompt]
+> `Q: <question>` 
+> `A: <answer>`
 
-**Supporting Content**
-<!-- Supporting content in tail of my note  -->
-- 
+<!-- Detailed response or dialog  -->
+
+
 
 ---
 # Back Matter
