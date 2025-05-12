@@ -1,8 +1,0 @@
-{
-  "layer": {
-    "slient": true,
-    "use-escape-codes": false,
-    "no-stdin": true,
-    "output": "chafa"
-  }
-}
