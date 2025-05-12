@@ -1,6 +1,9 @@
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
 # Created by `pipx` on 2024-11-14 16:33:47
 export PATH="$PATH:/Users/vberniex/.local/bin"
 
@@ -13,3 +16,23 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 export ZK_NOTEBOOK_DIR="$HOME/Documents/vault"
+
+export MANPATH="/usr/local/man:$MANPATH"
+
+# you may need to manually set your language environment
+export lang=en_us.utf-8
+
+# llvm and rust Path
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+
+# NVIM configuration
+export EDITOR='nvim'
+export VISUAL='nvim'
+export TERM="xterm-256color"
+
+# Image magick support 
+export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
+
+# Cargo Path
+export PATH="$HOME/.cargo/bin:$PATH"
