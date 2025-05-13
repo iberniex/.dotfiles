@@ -940,7 +940,7 @@ command =
 #     name your binary appropriately or source the shell integration script
 #     manually.
 # 
-initial-command = source ~/.zshrc
+initial-command = 
 
 # If true, keep the terminal open after the command exits. Normally, the
 # terminal window closes when the running command (such as a shell) exits.
