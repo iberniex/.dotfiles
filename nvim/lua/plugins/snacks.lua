@@ -8,6 +8,7 @@ return {
     picker = { enabled = true },
     notifier = { enabled = true },
     input = { enabled = true },
+    words = { enabled = true },
     dashboard = {
       autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", -- autokey sequence
       -- These settings are used by some built-in sections
