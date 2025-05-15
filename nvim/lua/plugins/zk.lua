@@ -10,6 +10,9 @@ return {
           cmd = { "zk", "lsp" },
           name = "zk",
           -- etc, see `:h vim.lsp.start_client()`
+          on_attach = function()
+            require("cmp_nvim_lsp").default_capabilities()
+          end,
         },
 
         -- automatically attach buffers in a zk notebook that match the given filetypes
