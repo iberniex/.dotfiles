@@ -8,7 +8,7 @@ Then I started going through using everything in my terminal cause I was so weir
 So I took up on nvim but without learning vim but try to learn vim first( it realy fun learning vim script ).
 But it is really good, try it!
 
-This contains the keybindings and plugins involved to prevent any confusion.
+This contains the keybindings involved to prevent any confusion.
 
 ## Global Keybinds
 - [lazy.nvim](lua/plugins/nvim-telescope.lua)
@@ -73,4 +73,5 @@ This contains the keybindings and plugins involved to prevent any confusion.
 | gf| go to link| follow links in markdown|
 | <leader>ch | toggling checkboxes| for toggling checkboxes|
 | cf| smart action | either follow link or toggle checkbox |
+
 
