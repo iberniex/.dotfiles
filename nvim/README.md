@@ -18,10 +18,10 @@ This contains the keybindings involved to prevent any confusion.
 |jj  | escape sequence | <ESC> binding. I got tired of using <ESC> and <C-c> |
 | "  " | mapleader | a mapping which uses the "g:mapleader" variable |
 | "//" | maplocalleader | used for mappings which are local to a buffer. |
-| <leader>ww | save current buffer | to save the current buffer |
-| <leader>wq | save and quit | save and quit the current buffer |
-| <leader>wa | save all buffers | save all active buffers |
-| <leader>qq | quit | quit neovim  |
+| `<leader>`ww | save current buffer | to save the current buffer |
+| `<leader>`wq | save and quit | save and quit the current buffer |
+| `<leader>`wa | save all buffers | save all active buffers |
+| `<leader>`qq | quit | quit neovim  |
 
 
 ## Telescope Keybinds
@@ -29,9 +29,9 @@ This contains the keybindings involved to prevent any confusion.
 
 | Keybinding | Name | description |
 | ------------- | -------------- | -------------- |
-|<leader>ff  | Find Files | telescope find files|
-| <leader>fb | Live Grep | finds the string match in current file directory |
-| <leader>fh | Help Tags | Telescope help tags really helpful for searching tags |
+|`<leader>`ff  | Find Files | telescope find files|
+| `<leader>`fb | Live Grep | finds the string match in current file directory |
+| `<leader>`fh | Help Tags | Telescope help tags really helpful for searching tags |
 
 
 ## Terminal Keybinds
@@ -39,8 +39,8 @@ This contains the keybindings involved to prevent any confusion.
 
 | Keybinding | Name | description |
 | ------------- | -------------- | -------------- |
-|<leader>tt  | open terminal | opening a terminal to the current buffer |
-| <leader><Esc> | close terminal | close the terminal created|
+|`<leader>`tt  | open terminal | opening a terminal to the current buffer |
+| `<leader>`<Esc> | close terminal | close the terminal created|
 
 
 ## ZK Keybinds
@@ -54,10 +54,10 @@ This contains the keybindings involved to prevent any confusion.
 |zlt | Visual  | creating a literature note from title selection | a permanent note is created in visual mode|
 |zfc | Visual  | creating a fleeting note from content selection | a fleeting note is created in visual mode|
 |zlc | Visual  | creating a literature note from content selection | a literature note is created in visual mode|
-|<leader>zff | Normal  | list of notes | displays a list of notes |
-|<leader>zfb | Normal  | list all note buffers | displays the note buffers in play |
-|<leader>zbl | Normal  | show possible links | displays a list of links notes|
-|<leader>zll | Normal  | creating a fleeting note | a fleet note is created in normal mode|
+|`<leader>`zff | Normal  | list of notes | displays a list of notes |
+|`<leader>`zfb | Normal  | list all note buffers | displays the note buffers in play |
+|`<leader>`zbl | Normal  | show possible links | displays a list of links notes|
+|`<leader>`zll | Normal  | creating a fleeting note | a fleet note is created in normal mode|
 |zm | Visual  | show possible matches | show possible matches in the grabbed selection|
 |zt | Normal  | show possible tags | show possible tags|
 |zcd | Normal  | cd to ZK DIR | goes to the ZK root directory |
@@ -71,7 +71,7 @@ This contains the keybindings involved to prevent any confusion.
 | Keybinding | Name | description |
 | ------------- | -------------- | -------------- |
 | gf| go to link| follow links in markdown|
-| <leader>ch | toggling checkboxes| for toggling checkboxes|
+| `<leader>`ch | toggling checkboxes| for toggling checkboxes|
 | cf| smart action | either follow link or toggle checkbox |
 
 
