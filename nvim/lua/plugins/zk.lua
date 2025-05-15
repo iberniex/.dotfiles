@@ -112,22 +112,18 @@ return {
         elseif workspace.name == "permanent" then
           local note_type = vim.fn.input("Type (note, permanent, question, prompt): ")
           vim.cmd("cd " .. workspace.path[note_type])
+          local title = vim.fn.input("Title: ")
+          local id = vim.fn.input("ID: ")
+          local cmd =
+            string.format("~/.config/nvim/lua/scripts/zk-new-permanent.sh %q %q %q", title, id, note_type)
+          local output = vim.fn.system(cmd) -- Trim whitespace
+          local filepath = vim.fn.trim(output)
 
-          -- type checker for split title and content creation
-          if type == "ZkNewFromTitleSelection" or type == "ZkNewFromContentSelection" then
-            require("zk.commands").get(type)({
-              id = vim.fn.input("ID: "),
-              title = vim.fn.input("Title: "),
-              dir = vim.fn.expand(workspace.path[note_type]),
-              template = note_type .. ".md",
-            })
+          -- Open the file
+          if vim.fn.filereadable(filepath) == 1 then
+            vim.cmd("edit " .. filepath)
           else
-            vim.cmd("cd " .. workspace.path)
-            require("zk.commands").get(type)({
-              title = vim.fn.input("Title: "),
-              dir = vim.fn.expand(workspace.path["fleeting"]),
-              template = workspace.template,
-            })
+            print("Could not find the created file: " .. filepath)
           end
         else
           print("Workspace not found: " .. workspace_name)
@@ -141,11 +137,12 @@ return {
     -- Note creation from terminal
     vim.api.nvim_set_keymap("n", "zf", ":lua CreateNote('fleeting', 'ZkNew')<CR>", maps)
     vim.api.nvim_set_keymap("n", "zl", ":lua CreateNote('literature', 'ZkNew')<CR>", maps)
-    vim.api.nvim_set_keymap("n", "zp", ":lua CreateNote('permanent', 'ZkNew')<CR>", maps)
+    vim.keymap.set("n", "zp", ":lua CreateNote('permanent', 'ZkNew')<CR>", maps)
+
     -- note creation from selection:title
     vim.api.nvim_set_keymap("v", "zft", ":lua CreateNote('fleeting', 'ZkNewFromTitleSelection')<CR>", maps)
     vim.api.nvim_set_keymap("v", "zlt", ":lua CreateNote('literature', 'ZkNewFromTitleSelection')<CR>", maps)
-    vim.api.nvim_set_keymap("v", "zpt", ":lua CreateNote('permanent', 'ZkNewFromTitleSelection')<CR>", maps)
+
     -- note creation from selection:content
     vim.api.nvim_set_keymap("v", "zfc", ":lua CreateNote('fleeting', 'ZkNewFromContentSelection')<CR>", maps)
     vim.api.nvim_set_keymap(
@@ -154,7 +151,7 @@ return {
       ":lua CreateNote('literature', 'ZkNewFromContentSelection')<CR>",
       maps
     )
-    vim.api.nvim_set_keymap("v", "zpc", ":lua CreateNote('permanent', 'ZkNewFromContentSelection')<CR>", maps)
+
     -- picker options
     vim.api.nvim_set_keymap("n", "<leader>zff", ":ZkNotes<CR>", maps)
     vim.api.nvim_set_keymap("n", "<leader>zfb", ":ZkBuffers<CR>", maps)
