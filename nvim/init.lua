@@ -39,6 +39,3 @@ vim.diagnostic.config({
   underline = true,
   update_in_insert = false,
 })
-
--- lsp enables
-vim.lsp.enable("lua_ls")

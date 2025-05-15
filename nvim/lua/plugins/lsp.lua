@@ -28,15 +28,14 @@ return {
     })
 
     -- Markdown: markdown_oxide
-    lspconfig.markdown_oxide.setup({
-      capabilities = vim.tbl_deep_extend("force", cmp_lsp.default_capabilities(), {
-        workspace = {
-          didChangeWatchedFiles = {
-            dynamicRegistration = true,
-          },
-        },
-      }),
-    })
+    -- lspconfig.markdown_oxide.setup({
+    --   capabilities = cmp_lsp.default_capabilities(),
+    --   settings = {
+    --     root_markers = {
+    --       ".moxide.toml",
+    --     },
+    --   },
+    -- })
 
     -- Yaml: yaml-language-server
     lspconfig.yamlls.setup({
