@@ -1,6 +1,8 @@
 # NVIM (neo vi Improved)
 
-So the backstory, I wanted to increase my typing speed and was getting clouded with alot of keybindings and settings in my VS code.
+So the backstory, 
+
+I wanted to increase my typing speed and was getting clouded with alot of keybindings and settings in my VS code.
 Then I started going through using everything in my terminal cause I was so weird just using terminal instances in vscode, zed, everywhere.
 
 So I took up on nvim but without learning vim but try to learn vim first( it realy fun learning vim script ).
