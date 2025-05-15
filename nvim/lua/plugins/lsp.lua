@@ -9,19 +9,13 @@ return {
     "nvimtools/none-ls.nvim",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    {
-      "folke/neodev.nvim",
-      config = true, -- This auto-injects Neovim runtime types into lua_ls
-    },
   },
+
   config = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = { "clangd", "lua_ls", "bashls", "yamlls" },
+      ensure_installed = { "clangd", "bashls", "yamlls" },
     })
-
-    require("neodev").setup({})
-
     local lspconfig = require("lspconfig")
     local cmp = require("cmp")
     local luasnip = require("luasnip")
@@ -58,18 +52,17 @@ return {
       settings = {
         Lua = {
           runtime = {
-            version = "Lua51",
-            path = vim.split(package.path, ";"),
-          },
-          diagnostics = {
-            globals = { "vim", "use", "describe", "it", "before_each", "after_each" },
+            version = "LuaJIT",
+            path = {
+              "lua/?.lua",
+              "lua/?/init.lua",
+            },
           },
           workspace = {
             library = {
               vim.env.VIMRUNTIME,
-              vim.fn.stdpath("config"),
             },
-            checkThirdParty = true,
+            checkThirdParty = false,
           },
           telemetry = {
             enable = false,
@@ -84,12 +77,7 @@ return {
       sources = {
         -- Lua_Ls
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.diagnostics.selene.with({
-          condition = function(utils)
-            return utils.root_has_file({ "selene.toml", "selene.yaml" })
-          end,
-        }),
-
+        null_ls.builtins.diagnostics.selene,
         -- Clangd
         null_ls.builtins.diagnostics.cppcheck,
         null_ls.builtins.formatting.clang_format,
