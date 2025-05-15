@@ -2,7 +2,7 @@ return {
   "akinsho/toggleterm.nvim",
   config = function()
     require("toggleterm").setup({
-      open_mapping = nil,
+      open_mapping = [[<leader>tt]],
       size = 20,
 
       direction = "float",
@@ -12,10 +12,7 @@ return {
       },
     })
 
-    -- open terminal
-    vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>ToggleTerm<CR>", { noremap = true, silent = true })
-
     -- close terminal during session
-    vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
+    vim.api.nvim_set_keymap("t", "<leader><Esc>", "<C-\\><C-n>:q!<CR>", { noremap = true, silent = true })
   end,
 }
