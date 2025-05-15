@@ -31,7 +31,7 @@ This contains the keybindings and plugins involved to prevent any confusion.
 | ------------- | -------------- | -------------- |
 |<leader>ff  | Find Files | telescope find files|
 | <leader>fb | Live Grep | finds the string match in current file directory |
-| <leader>fh | Help Tags | Telescopt help tags really helpful for searching tags |
+| <leader>fh | Help Tags | Telescope help tags really helpful for searching tags |
 
 
 ## Terminal Keybinds
@@ -63,4 +63,14 @@ This contains the keybindings and plugins involved to prevent any confusion.
 |zcd | Normal  | cd to ZK DIR | goes to the ZK root directory |
 |zll | Normal  | Insert link | insert link in the current position |
 |zil | Visual  | Insert Link | insert link in the current selection|
+
+
+## Obsidian keybinds
+- [obsidian.nvim](lua/plugins/obsidian.lua)
+
+| Keybinding | Name | description |
+| ------------- | -------------- | -------------- |
+| gf| go to link| follow links in markdown|
+| <leader>ch | toggling checkboxes| for toggling checkboxes|
+| cf| smart action | either follow link or toggle checkbox |
 
