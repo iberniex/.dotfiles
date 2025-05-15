@@ -54,7 +54,7 @@ return {
     }
 
     -- Function to create a new note using a template
-    function CreateNote(workspace_name)
+    function CreateNote(workspace_name, type)
       local workspace = workspaces[workspace_name]
       if workspace then
         -- literature template creation
@@ -66,11 +66,19 @@ return {
           local note_type = vim.fn.input("Type (book, person, quote, term, tool): ")
           vim.cmd("cd " .. workspace.path[note_type])
 
-          require("zk.commands").get("ZkNew")({
-            title = vim.fn.input("Title: "),
-            dir = vim.fn.expand(workspace.path[note_type]),
-            template = note_type .. ".md",
-          })
+          -- -- type checker to split title creation
+          if type == "ZkNewFromTitleSelection" or type == "ZkNewFromContentSelection" then
+            require("zk.commands").get(type)({
+              dir = vim.fn.expand(workspace.path[note_type]),
+              template = note_type .. ".md",
+            })
+          else
+            require("zk.commands").get(type)({
+              title = vim.fn.input("Title: "),
+              dir = vim.fn.expand(workspace.path[note_type]),
+              template = note_type .. ".md",
+            })
+          end
 
           -- fleeting template creation
           ---@params note_type
@@ -81,11 +89,19 @@ return {
           local note_type = vim.fn.input("Type (fleeting, pseudocode): ")
           vim.cmd("cd " .. workspace.path[note_type])
 
-          require("zk.commands").get("ZkNew")({
-            title = vim.fn.input("Title: "),
-            dir = vim.fn.expand(workspace.path[note_type]),
-            template = note_type .. ".md",
-          })
+          -- type checker for split title and content creation
+          if type == "ZkNewFromTitleSelection" or type == "ZkNewFromContentSelection" then
+            require("zk.commands").get(type)({
+              dir = vim.fn.expand(workspace.path[note_type]),
+              template = note_type .. ".md",
+            })
+          else
+            require("zk.commands").get(type)({
+              title = vim.fn.input("Title: "),
+              dir = vim.fn.expand(workspace.path[note_type]),
+              template = note_type .. ".md",
+            })
+          end
 
           -- Permanent template creation
           ---@params note_type
@@ -97,28 +113,58 @@ return {
           local note_type = vim.fn.input("Type (note, permanent, question, prompt): ")
           vim.cmd("cd " .. workspace.path[note_type])
 
-          require("zk.commands").get("ZkNew")({
-            id = vim.fn.input("ID: "),
-            title = vim.fn.input("Title: "),
-            dir = vim.fn.expand(workspace.path[note_type]),
-            template = note_type .. ".md",
-          })
+          -- type checker for split title and content creation
+          if type == "ZkNewFromTitleSelection" or type == "ZkNewFromContentSelection" then
+            require("zk.commands").get(type)({
+              id = vim.fn.input("ID: "),
+              title = vim.fn.input("Title: "),
+              dir = vim.fn.expand(workspace.path[note_type]),
+              template = note_type .. ".md",
+            })
+          else
+            vim.cmd("cd " .. workspace.path)
+            require("zk.commands").get(type)({
+              title = vim.fn.input("Title: "),
+              dir = vim.fn.expand(workspace.path["fleeting"]),
+              template = workspace.template,
+            })
+          end
         else
-          vim.cmd("cd " .. workspace.path)
-          require("zk.commands").get("ZkNew")({
-            title = vim.fn.input("Title: "),
-            dir = vim.fn.expand(workspace.path),
-            template = workspace.template,
-          })
+          print("Workspace not found: " .. workspace_name)
         end
-      else
-        print("Workspace not found: " .. workspace_name)
       end
     end
 
+    local maps = { noremap = true, silent = true }
+
     -- Keymaps for creating new notes with templates
-    vim.api.nvim_set_keymap("n", "zf", ":lua CreateNote('fleeting')<CR>", { noremap = true, silent = true })
-    vim.api.nvim_set_keymap("n", "zl", ":lua CreateNote('literature')<CR>", { noremap = true, silent = true })
-    vim.api.nvim_set_keymap("n", "zp", ":lua CreateNote('permanent')<CR>", { noremap = true, silent = true })
+    -- Note creation from terminal
+    vim.api.nvim_set_keymap("n", "zf", ":lua CreateNote('fleeting', 'ZkNew')<CR>", maps)
+    vim.api.nvim_set_keymap("n", "zl", ":lua CreateNote('literature', 'ZkNew')<CR>", maps)
+    vim.api.nvim_set_keymap("n", "zp", ":lua CreateNote('permanent', 'ZkNew')<CR>", maps)
+    -- note creation from selection:title
+    vim.api.nvim_set_keymap("v", "zft", ":lua CreateNote('fleeting', 'ZkNewFromTitleSelection')<CR>", maps)
+    vim.api.nvim_set_keymap("v", "zlt", ":lua CreateNote('literature', 'ZkNewFromTitleSelection')<CR>", maps)
+    vim.api.nvim_set_keymap("v", "zpt", ":lua CreateNote('permanent', 'ZkNewFromTitleSelection')<CR>", maps)
+    -- note creation from selection:content
+    vim.api.nvim_set_keymap("v", "zfc", ":lua CreateNote('fleeting', 'ZkNewFromContentSelection')<CR>", maps)
+    vim.api.nvim_set_keymap(
+      "v",
+      "zlc",
+      ":lua CreateNote('literature', 'ZkNewFromContentSelection')<CR>",
+      maps
+    )
+    vim.api.nvim_set_keymap("v", "zpc", ":lua CreateNote('permanent', 'ZkNewFromContentSelection')<CR>", maps)
+    -- picker options
+    vim.api.nvim_set_keymap("n", "<leader>zff", ":ZkNotes<CR>", maps)
+    vim.api.nvim_set_keymap("n", "<leader>zfb", ":ZkBuffers<CR>", maps)
+    vim.api.nvim_set_keymap("n", "<leader>zbl", ":ZkBacklinks<CR>", maps)
+    vim.api.nvim_set_keymap("n", "<leader>zll", ":ZkLinks<CR>", maps)
+    vim.api.nvim_set_keymap("v", "zm", ":ZkMatch<CR>", maps)
+    vim.api.nvim_set_keymap("n", "zt", ":ZkTags<CR>", maps)
+    vim.api.nvim_set_keymap("n", "zcd", ":ZkCd<CR>", maps)
+    -- link usage
+    vim.api.nvim_set_keymap("n", "zll", ":ZkInsert<CR>", maps)
+    vim.api.nvim_set_keymap("v", "zil", ":ZkInsertLinkAtSelection {matchSelected = true}<CR>", maps)
   end,
 }
