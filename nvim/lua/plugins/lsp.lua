@@ -28,14 +28,14 @@ return {
     })
 
     -- Markdown: markdown_oxide
-    -- lspconfig.markdown_oxide.setup({
-    --   capabilities = cmp_lsp.default_capabilities(),
-    --   settings = {
-    --     root_markers = {
-    --       ".moxide.toml",
-    --     },
-    --   },
-    -- })
+    lspconfig.markdown_oxide.setup({
+      capabilities = cmp_lsp.default_capabilities(),
+      settings = {
+        root_markers = {
+          ".moxide.toml",
+        },
+      },
+    })
 
     -- Yaml: yaml-language-server
     lspconfig.yamlls.setup({
