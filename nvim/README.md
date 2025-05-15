@@ -22,6 +22,7 @@ This contains the keybindings and plugins involved to prevent any confusion.
 
 
 ## Telescope Keybinds
+- [telescope.nvim](lua/plugins/nvim-telescope.lua)
 
 | Keybinding | Name | description |
 | ------------- | -------------- | -------------- |
@@ -30,14 +31,10 @@ This contains the keybindings and plugins involved to prevent any confusion.
 | <leader>fh | Help Tags | Telescopt help tags really helpful for searching tags |
 
 
-## Global Keybinds
+## Terminal Keybinds
+- [toggleterm.lua](lua/plugins/toggleterm.lua)
 
 | Keybinding | Name | description |
 | ------------- | -------------- | -------------- |
-|jj  | escape sequence | <ESC> binding. I got tired of using <ESC> and <C-c> |
-| " " | mapleader | a mapping which uses the "g:mapleader" variable |
-| "//" | maplocalleader | used for mappings which are local to a buffer. |
-| <leader>ww | save current buffer | to save the current buffer |
-| <leader>wq | save and quit | save and quit the current buffer |
-| <leader>wa | save all buffers | save all active buffers |
-| <leader>qq | quit | quit neovim  |
+|<leader>tt  | open terminal | opening a terminal to the current buffer |
+| <leader><Esc> | close terminal | close the terminal created|
