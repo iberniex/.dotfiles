@@ -164,7 +164,7 @@ return {
     vim.api.nvim_set_keymap("n", "zt", ":ZkTags<CR>", maps)
     vim.api.nvim_set_keymap("n", "zcd", ":ZkCd<CR>", maps)
     -- link usage
-    vim.api.nvim_set_keymap("n", "zll", ":ZkInsertLink<CR>", maps)
-    vim.api.nvim_set_keymap("v", "zil", ":ZkInsertLinkAtSelection {matchSelected = true}<CR>", maps)
+    vim.api.nvim_set_keymap("n", "<leader>zlk", ":ZkInsertLink<CR>", maps)
+    vim.api.nvim_set_keymap("v", "<leader>zik", ":ZkInsertLinkAtSelection {matchSelected = true}<CR>", maps)
   end,
 }
