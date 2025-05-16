@@ -1,5 +1,7 @@
 ---
 title: "Fleeting: {{title}}"
+id:
+lead:
 date: {{format-date now "medium"}}
 time: {{format-date now "time"}}
 type: fleeting
@@ -29,7 +31,7 @@ tags:
 - based_on::
 
 **References**
-<!-- Links to pages not referenced in the content. see: [[related note]] because <reason> -->
+<!-- Links to pages not referenced in the content. -->
 - see:: 
 
 **Terms**

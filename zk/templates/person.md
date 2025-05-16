@@ -1,5 +1,6 @@
 ---
 title: "{{title}}"
+id:
 source:
 author:
 aliases:
@@ -42,7 +43,7 @@ bio_short:
 - based_on::
 
 **References**
-<!-- Links to pages not referenced in the content. see: [[related note]] because <reason> -->
+<!-- Links to pages not referenced in the content. -->
 - see:: 
 
 **Terms**

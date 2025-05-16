@@ -1,6 +1,7 @@
 ---
 title: "{{title}}"
 source:
+id:
 author:
 created: {{format-date now "long"}}
 modified: 
@@ -44,7 +45,7 @@ by [[{{author}}]]
 - based_on::
 
 **References**
-<!-- Links to pages not referenced in the content. see: [[related note]] because <reason> -->
+<!-- Links to pages not referenced in the content. -->
 - see:: 
 
 **Terms**

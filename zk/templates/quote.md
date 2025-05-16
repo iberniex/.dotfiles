@@ -1,5 +1,6 @@
 ---
 title: "{{title}}"
+id:
 source:
 author:
 created: {{format-date now "medium"}}
@@ -27,7 +28,7 @@ tags:
 - based_on::
 
 **References**
-<!-- Links to pages not referenced in the content. see: [[related note]] because <reason> -->
+<!-- Links to pages not referenced in the content. -->
 - see:: 
 
 **Terms**
