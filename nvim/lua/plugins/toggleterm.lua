@@ -13,6 +13,6 @@ return {
     })
 
     -- close terminal during session
-    vim.api.nvim_set_keymap("t", "<leader><Esc>", "<C-\\><C-n>:q!<CR>", { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>:q!<CR>", { noremap = true, silent = true })
   end,
 }

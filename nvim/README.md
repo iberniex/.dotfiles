@@ -16,7 +16,7 @@ This contains the keybindings involved to prevent any confusion.
 | Keybinding | Name | description |
 | ------------- | -------------- | -------------- |
 |jj  | escape sequence | <ESC> binding. I got tired of using <ESC> and <C-c> |
-| "  " | mapleader | a mapping which uses the "g:mapleader" variable |
+| "," | mapleader | a mapping which uses the "g:mapleader" variable |
 | "//" | maplocalleader | used for mappings which are local to a buffer. |
 | `<leader>`ww | save current buffer | to save the current buffer |
 | `<leader>`wq | save and quit | save and quit the current buffer |
@@ -61,8 +61,8 @@ This contains the keybindings involved to prevent any confusion.
 |zm | Visual  | show possible matches | show possible matches in the grabbed selection|
 |zt | Normal  | show possible tags | show possible tags|
 |zcd | Normal  | cd to ZK DIR | goes to the ZK root directory |
-|zll | Normal  | Insert link | insert link in the current position |
-|zil | Visual  | Insert Link | insert link in the current selection|
+|`<leader>`zlk | Normal  | Insert link | insert link in the current position |
+|`<leader>`zik | Visual  | Insert Link | insert link in the current selection|
 
 
 ## Obsidian keybinds
