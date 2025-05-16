@@ -229,3 +229,7 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
 	if.app-id = 'md.obsidian'
 	run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+	if.app-id = 'org.zotero.zotero'
+	run = 'move-node-to-workspace Z'
