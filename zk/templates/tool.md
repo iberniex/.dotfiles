@@ -4,8 +4,8 @@ id:
 source:
 author:
 created: {{format-date now "long"}}
-modified: {{format-date now "
-type: Tool
+modified: {{format-date now "long"}}
+type: tool
 tags:
     - type/tool
     - theme/xyz
