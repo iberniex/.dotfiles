@@ -99,6 +99,7 @@ return {
             end,
           })
         end
+        vim.opt_local.conceallevel = 2
       end,
     })
     -- CMP Setup
