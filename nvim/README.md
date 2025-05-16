@@ -40,7 +40,7 @@ This contains the keybindings involved to prevent any confusion.
 | Keybinding | Name | description |
 | ------------- | -------------- | -------------- |
 |`<leader>`tt  | open terminal | opening a terminal to the current buffer |
-| `<leader>`<Esc> | close terminal | close the terminal created|
+| <Esc> | close terminal | close the terminal created|
 
 
 ## ZK Keybinds
