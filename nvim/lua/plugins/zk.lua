@@ -54,12 +54,27 @@ return {
         },
         template = "permanent.md",
       },
+      project = {
+        path = {
+          project = "~/documents/vault/300-projects",
+        },
+        template = "project.md",
+      },
     }
 
     -- Function to create a new note using a template
     function CreateNote(workspace_name, type)
       local workspace = workspaces[workspace_name]
       if workspace then
+        -- project template creation
+        if workspace.name == "project" then
+          vim.cmd("cd " .. workspace.path["project"])
+          require("zk.commands").get("ZkNew")({
+            dir = vim.fn.expand(workspace.path["project"]),
+            title = vim.fn.input("Project Title: "),
+            template = workspace.template,
+          })
+        end
         -- literature template creation
         ---@params note_type
         ---@params note_title
@@ -141,6 +156,7 @@ return {
     vim.api.nvim_set_keymap("n", "zf", ":lua CreateNote('fleeting', 'ZkNew')<CR>", maps)
     vim.api.nvim_set_keymap("n", "zl", ":lua CreateNote('literature', 'ZkNew')<CR>", maps)
     vim.keymap.set("n", "zp", ":lua CreateNote('permanent', 'ZkNew')<CR>", maps)
+    vim.keymap.set("n", "<leader>zp", ":lua CreateNote('project', 'ZkNew')<CR>", maps)
 
     -- note creation from selection:title
     vim.api.nvim_set_keymap("v", "zft", ":lua CreateNote('fleeting', 'ZkNewFromTitleSelection')<CR>", maps)

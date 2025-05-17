@@ -40,6 +40,10 @@ return {
         name = "permanent",
         path = "~/Documents/vault/200-Permanent",
       },
+      {
+        name = "project",
+        path = "~/Documents/vault/300-Projects",
+      },
     },
     -- default folder for notes
     notes_subdir = "000-Index",
