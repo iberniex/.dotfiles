@@ -55,8 +55,9 @@ return {
         template = "permanent.md",
       },
       project = {
+        name = "project",
         path = {
-          project = "~/documents/vault/300-projects",
+          project = "~/Documents/vault/300-Projects",
         },
         template = "project.md",
       },
@@ -66,15 +67,6 @@ return {
     function CreateNote(workspace_name, type)
       local workspace = workspaces[workspace_name]
       if workspace then
-        -- project template creation
-        if workspace.name == "project" then
-          vim.cmd("cd " .. workspace.path["project"])
-          require("zk.commands").get("ZkNew")({
-            dir = vim.fn.expand(workspace.path["project"]),
-            title = vim.fn.input("Project Title: "),
-            template = workspace.template,
-          })
-        end
         -- literature template creation
         ---@params note_type
         ---@params note_title
@@ -143,6 +135,14 @@ return {
           else
             print("Could not find the created file: " .. filepath)
           end
+          -- project template creation
+        elseif workspace.name == "project" then
+          vim.cmd("cd " .. workspace.path["project"])
+          require("zk.commands").get("ZkNew")({
+            dir = vim.fn.expand(workspace.path["project"]),
+            title = vim.fn.input("project title: "),
+            template = workspace.template,
+          })
         else
           print("Workspace not found: " .. workspace_name)
         end
