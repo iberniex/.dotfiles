@@ -153,35 +153,115 @@ return {
 
     -- Keymaps for creating new notes with templates
     -- Note creation from terminal
-    vim.api.nvim_set_keymap("n", "zf", ":lua CreateNote('fleeting', 'ZkNew')<CR>", maps)
-    vim.api.nvim_set_keymap("n", "zl", ":lua CreateNote('literature', 'ZkNew')<CR>", maps)
-    vim.keymap.set("n", "zp", ":lua CreateNote('permanent', 'ZkNew')<CR>", maps)
-    vim.keymap.set("n", "<leader>zp", ":lua CreateNote('project', 'ZkNew')<CR>", maps)
+    vim.api.nvim_set_keymap(
+      "n",
+      "zf",
+      ":lua CreateNote('fleeting', 'ZkNew')<CR>",
+      { noremap = true, silent = true, desc = "creating a fleeting note" }
+    )
+    vim.api.nvim_set_keymap(
+      "n",
+      "zl",
+      ":lua CreateNote('literature', 'ZkNew')<CR>",
+      { noremap = true, silent = true, desc = "creating a literature note" }
+    )
+    vim.keymap.set(
+      "n",
+      "zp",
+      ":lua CreateNote('permanent', 'ZkNew')<CR>",
+      { noremap = true, silent = true, desc = "creating a permanent note" }
+    )
+    vim.keymap.set(
+      "n",
+      "<leader>zp",
+      ":lua CreateNote('project', 'ZkNew')<CR>",
+      { noremap = true, silent = true, desc = "creating a project note" }
+    )
 
     -- note creation from selection:title
-    vim.api.nvim_set_keymap("v", "zft", ":lua CreateNote('fleeting', 'ZkNewFromTitleSelection')<CR>", maps)
-    vim.api.nvim_set_keymap("v", "zlt", ":lua CreateNote('literature', 'ZkNewFromTitleSelection')<CR>", maps)
+    vim.api.nvim_set_keymap(
+      "v",
+      "zft",
+      ":lua CreateNote('fleeting', 'ZkNewFromTitleSelection')<CR>",
+      { noremap = true, silent = true, desc = "creating a fleeting note by title" }
+    )
+    vim.api.nvim_set_keymap(
+      "v",
+      "zlt",
+      ":lua CreateNote('literature', 'ZkNewFromTitleSelection')<CR>",
+      { noremap = true, silent = true, desc = "creating a literature note by title" }
+    )
 
     -- note creation from selection:content
-    vim.api.nvim_set_keymap("v", "zfc", ":lua CreateNote('fleeting', 'ZkNewFromContentSelection')<CR>", maps)
+    vim.api.nvim_set_keymap(
+      "v",
+      "zfc",
+      ":lua CreateNote('fleeting', 'ZkNewFromContentSelection')<CR>",
+      { noremap = true, silent = true, desc = "creating a fleeting note by content" }
+    )
     vim.api.nvim_set_keymap(
       "v",
       "zlc",
-      ":lua CreateNote('literature', 'ZkNewFromContentSelection')<CR>",
+      ":lua CreateNote('literature', 'creating a literature note by content')<CR>",
       maps
     )
 
     -- picker options
-    vim.api.nvim_set_keymap("n", "<leader>zff", ":ZkNotes<CR>", maps)
-    vim.api.nvim_set_keymap("n", "<leader>zfb", ":ZkBuffers<CR>", maps)
-    vim.api.nvim_set_keymap("n", "<leader>zbl", ":ZkBacklinks<CR>", maps)
-    vim.api.nvim_set_keymap("n", "<leader>zll", ":ZkLinks<CR>", maps)
-    vim.api.nvim_set_keymap("v", "zm", ":ZkMatch<CR>", maps)
-    vim.api.nvim_set_keymap("n", "zt", ":ZkTags<CR>", maps)
-    vim.api.nvim_set_keymap("n", "zcd", ":ZkCd<CR>", maps)
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>znl",
+      ":ZkNotes<CR>",
+      { noremap = true, silent = true, desc = "list all notes" }
+    )
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>znb",
+      ":ZkBuffers<CR>",
+      { noremap = true, silent = true, desc = "list all note buffers" }
+    )
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>zbl",
+      ":ZkBacklinks<CR>",
+      { noremap = true, silent = true, desc = "list all backlinks" }
+    )
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>zll",
+      ":ZkLinks<CR>",
+      { noremap = true, silent = true, desc = "list all links in the buffer" }
+    )
+    vim.api.nvim_set_keymap(
+      "v",
+      "zm",
+      ":ZkMatch<CR>",
+      { noremap = true, silent = true, desc = "list all matches" }
+    )
+    vim.api.nvim_set_keymap(
+      "n",
+      "zt",
+      ":ZkTags<CR>",
+      { noremap = true, silent = true, desc = "list all tags" }
+    )
+    vim.api.nvim_set_keymap(
+      "n",
+      "zcd",
+      ":ZkCd<CR>",
+      { noremap = true, silent = true, desc = "go to root directory" }
+    )
 
     -- link usage
-    vim.api.nvim_set_keymap("n", "<leader>zlk", ":ZkInsertLink<CR>", maps)
-    vim.api.nvim_set_keymap("v", "<leader>zik", ":ZkInsertLinkAtSelection<CR>", maps)
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>zlk",
+      ":ZkInsertLink<CR>",
+      { noremap = true, silent = true, desc = "insert link to current position" }
+    )
+    vim.api.nvim_set_keymap(
+      "v",
+      "<leader>zik",
+      ":ZkInsertLinkAtSelection<CR>",
+      { noremap = true, silent = true, desc = "create a link on the current selection" }
+    )
   end,
 }
