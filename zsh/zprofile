@@ -28,7 +28,6 @@ export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 # NVIM configuration
 export EDITOR='nvim'
 export VISUAL='nvim'
-export TERM="xterm-256color"
 
 # Image magick support 
 export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
