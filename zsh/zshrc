@@ -82,6 +82,9 @@ alias sp="spotify_player"
 alias lzg="lazygit"
 alias manual='MANPAGER="less -XNR --use-color -Dd+y -Du+208 -DN+r" man' 
 alias man='MANPAGER="less -XNR --use-color -Dd+y -Du+208 -DN+r" man' 
+alias vault='cd ~/Documents/vault'
+alias core='cd ~/Documents/projects/The-Core-Dump'
+alias config='cd ~/.config'
 
 # Lf configurations
 # to save the current directory
