@@ -224,7 +224,7 @@ automatically-unhide-macos-hidden-apps = false
 
 [[on-window-detected]]
 	if.app-id = 'com.google.Chrome'
-	run = 'move-node-to-workspace C'
+	run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
 	if.app-id = 'md.obsidian'
@@ -233,3 +233,7 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
 	if.app-id = 'org.zotero.zotero'
 	run = 'move-node-to-workspace Z'
+
+[[on-window-detected]]
+	if.app-id = 'company.thebrowser.Browser'
+	run = 'move-node-to-workspace B'
