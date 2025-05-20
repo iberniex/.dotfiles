@@ -87,7 +87,7 @@ alias man='MANPAGER="less -XNR --use-color -Dd+y -Du+208 -DN+r" man'
 alias vault='cd ~/Documents/vault'
 alias core='cd ~/Documents/projects/The-Core-Dump'
 alias config='cd ~/.config'
-alias lab = 'cd ~/Documents/projects/Lab'
+alias lab='cd ~/Documents/projects/Lab'
 
 # Lf configurations
 # to save the current directory
