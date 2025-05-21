@@ -7,6 +7,7 @@ vim.o.relativenumber = true
 vim.o.autoindent = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+vim.o.spelllang = "en_us"
 
 -- Lazy configuration
 require("config.lazy")
