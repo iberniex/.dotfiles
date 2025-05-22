@@ -1,0 +1,33 @@
+---
+template-type: daily
+tag:
+  - type/journal
+  - group/journal
+  - type/daily
+aliases:
+created:
+modified:
+title: "Journal: {{format-date now '%Y-%m-%d'}}"
+---
+
+# {{format-date now "long"}}
+
+## Daily Journal
+
+### **Things to do**
+
+-
+
+### **Tasks to be done**
+
+- ***
+
+## Back Matter
+
+### **References**
+
+-
+
+### **Terms**
+
+- ***
