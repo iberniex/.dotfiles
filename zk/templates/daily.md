@@ -1,4 +1,5 @@
 ---
+title: "Journal: {{format-date now '%Y-%m-%d'}}"
 template-type: daily
 tag:
   - type/journal
@@ -7,7 +8,6 @@ tag:
 aliases:
 created:
 modified:
-title: "Journal: {{format-date now '%Y-%m-%d'}}"
 ---
 
 # {{format-date now "long"}}

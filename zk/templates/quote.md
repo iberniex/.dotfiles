@@ -1,50 +1,61 @@
 ---
-title: "{{title}}"
+title: "Quote: {{title}}"
 id:
 source:
 author:
-created: {{format-date now "medium"}}
+created: { { format-date now "medium" } }
 type: quote
-tags: 
-    - type/quote 
-    - theme/xyz
+tags:
+  - type/quote
+  - theme/xyz
 ---
+
 # {{title}}
 
 <!-- Quote and author from frontmatter goes here. Also used for Dataview list of quotes. -->
 
 > [!QUOTE]
->  `= this.quote`
->  — `= this.author`
-
-
-
+> `= this.quote`
+> — `= this.author`
 
 ---
+
 # Back Matter
 
 **Source**
-<!-- Always keep a link to the source- --> 
+
+<!-- Always keep a link to the source- -->
+
 - based_on::
 
 **References**
+
 <!-- Links to pages not referenced in the content. -->
-- see:: 
+
+- see::
 
 **Terms**
+
 <!-- Links to definition pages. -->
-- 
+
+-
 
 **Target**
+
 <!-- Link to project note or externaly published content. -->
+
 - used_in::
 
 **Tasks**
-<!-- What remains to be done with this note? --> 
-- 
+
+<!-- What remains to be done with this note? -->
+
+-
 
 **Questions**
-<!-- What remains for you to consider? --> 
-- 
+
+<!-- What remains for you to consider? -->
+
+-
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: "Prompt: {{title}}"
 id: {{id}}
 created: {{format-date now "medium"}}
 modified:

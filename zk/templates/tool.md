@@ -1,5 +1,5 @@
 ---
-title: "{{Title}}"
+title: "Tool: {{Title}}"
 id:
 source:
 author:

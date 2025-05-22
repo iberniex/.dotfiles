@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: "Question: {{title}}"
 id: {{id}}
 created: {{format-date now "medium"}}
 modified:

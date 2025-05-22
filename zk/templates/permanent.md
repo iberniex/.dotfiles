@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: "Permanent: {{title}}"
 id: {{id}}
 created: {{format-date now "medium"}}
 modified:

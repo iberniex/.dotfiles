@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: "Person: {{title}}"
 id:
 source:
 author:
