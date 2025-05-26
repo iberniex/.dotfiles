@@ -220,10 +220,18 @@ automatically-unhide-macos-hidden-apps = false
 
 [[on-window-detected]]
 	if.app-id = 'com.spotify.client'
-	run = 'move-node-to-workspace S'
+	run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+	if.app-id = "com.apple.Music"
+	run = 'move-node-to-workspace M'
 
 [[on-window-detected]]
 	if.app-id = 'com.google.Chrome'
+	run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
+	if.app-id = 'company.thebrowser.Browser'
 	run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
@@ -234,6 +242,4 @@ automatically-unhide-macos-hidden-apps = false
 	if.app-id = 'org.zotero.zotero'
 	run = 'move-node-to-workspace Z'
 
-[[on-window-detected]]
-	if.app-id = 'company.thebrowser.Browser'
-	run = 'move-node-to-workspace B'
+
