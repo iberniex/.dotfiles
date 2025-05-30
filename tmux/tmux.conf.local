@@ -474,6 +474,9 @@ set -g @dracula-git-show-remote-status true
 set -g @dracula-battery-label false
 set -g @dracula-show-battery-status true
 
+# mac-player
+set -g @dracula-mac-remote false
+
 set -g @dracula-colors "
 # simple gruvbox Color Pallette
 white='#EBDBB2'
