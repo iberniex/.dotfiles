@@ -401,11 +401,11 @@ theme = GruvboxDarkHard
 
 # Background color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-background = #282828
+background = #1d2021
 
 # Foreground color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
-foreground = #A89984
+foreground = #7c6f64
 
 # The foreground and background color for selection. If this is not set, then
 # the selection color is just the inverted window background and foreground
@@ -828,7 +828,7 @@ mouse-scroll-multiplier = 1
 # widgets to show through which isn't generally desirable.
 # 
 # On macOS, changing this configuration requires restarting Ghostty completely.
-background-opacity = 0.9
+background-opacity = 0.96
 
 # Whether to blur the background when `background-opacity` is less than 1.
 # 
