@@ -397,7 +397,7 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 # 
 #   - macOS: titlebar tabs style is not updated when switching themes.
 # 
-theme = GruvboxDarkHard
+theme = GruvboxDark
 
 # Background color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
@@ -828,7 +828,7 @@ mouse-scroll-multiplier = 1
 # widgets to show through which isn't generally desirable.
 # 
 # On macOS, changing this configuration requires restarting Ghostty completely.
-background-opacity = 0.96
+background-opacity = 0.80
 
 # Whether to blur the background when `background-opacity` is less than 1.
 # 
@@ -1360,7 +1360,7 @@ window-padding-y = 0
 # one side. If this is `false`, the top left grid cell will always hug the
 # edge with zero padding other than what may be specified with the other
 # `window-padding` options.
-# 
+# true
 # If other `window-padding` fields are set and this is `true`, this will still
 # apply. The other padding is applied first and may affect how many grid cells
 # actually exist, and this is applied last in order to balance the padding
@@ -1413,7 +1413,7 @@ window-inherit-working-directory = true
 # focused window. If no window was previously focused, the default font size
 # will be used. If this is false, the default font size specified in the
 # configuration `font-size` will be used.
-window-inherit-font-size = true
+window-inherit-font-size = false
 
 # Configure a preference for window decorations. This setting specifies
 # a _preference_; the actual OS, desktop environment, window manager, etc.
