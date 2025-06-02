@@ -451,6 +451,9 @@ set -g @dracula-plugins 'battery git custom:mac-player.sh'
 set -g @dracula-refresh-rate 2
 
 # status-bar
+set -g @dracula-custom-plugin-colors "pink dark_gray"
+set -g @dracula-battery-colors "cyan dark_gray"
+
 set -g @dracula-show-empty-plugins false
 set -g @dracula-show-powerline true
 set -g @dracula-border-contrast true
