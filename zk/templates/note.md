@@ -1,7 +1,7 @@
 ---
 title: "Permanent Note: {{title}}"
-id: { { id } }
-created: { { format-date now "medium" } }
+id: {{id}}
+created: {{format-date now "medium"}}
 modified:
 type: note
 aliases:
@@ -26,6 +26,18 @@ lead:
 <!-- Supporting content in tail of my note  -->
 
 -
+
+**Tasks**
+
+<!-- What remains to be done with this note? -->
+
+-
+
+**Questions**
+
+<!-- What remains for you to consider? -->
+
+- question::
 
 ---
 
@@ -54,17 +66,5 @@ lead:
 <!-- Link to project note or externaly published content. -->
 
 - used_in::
-
-**Tasks**
-
-<!-- What remains to be done with this note? -->
-
--
-
-**Questions**
-
-<!-- What remains for you to consider? -->
-
-- question::
 
 ---

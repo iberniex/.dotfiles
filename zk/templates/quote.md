@@ -3,7 +3,7 @@ title: "Quote: {{title}}"
 id:
 source:
 author:
-created: { { format-date now "medium" } }
+created: "{{format-date now \"medium\"}}"
 type: quote
 tags:
   - type/quote
@@ -17,6 +17,18 @@ tags:
 > [!QUOTE]
 > `= this.quote`
 > — `= this.author`
+
+**Tasks**
+
+<!-- What remains to be done with this note? -->
+
+-
+
+**Questions**
+
+<!-- What remains for you to consider? -->
+
+-
 
 ---
 
@@ -45,17 +57,5 @@ tags:
 <!-- Link to project note or externaly published content. -->
 
 - used_in::
-
-**Tasks**
-
-<!-- What remains to be done with this note? -->
-
--
-
-**Questions**
-
-<!-- What remains for you to consider? -->
-
--
 
 ---
