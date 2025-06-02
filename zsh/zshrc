@@ -14,7 +14,7 @@
 
 # Initialize ohmyzsh
 
-ZSH_THEME="dogenpunk"
+ZSH_THEME="spaceship"
 
 # you may need to manually set your language environment
 export lang=en_us.utf-8

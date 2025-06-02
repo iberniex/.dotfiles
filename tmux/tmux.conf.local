@@ -473,15 +473,15 @@ set -g @dracula-mac-remote false
 set -g @dracula-colors "
 # simple gruvbox Color Pallette
 white='#D5C4A1'
-gray='#3C3836'
+gray='#242321'
 dark_gray='#1D2021'
 light_purple='#D3869B'
 dark_purple='#665C54'
 cyan='#8EC07C'
-green='#A9B665'
+green='#6F7C3A'
 orange='#D65D0E'
 red='#FB4934'
-pink='#F285A2'
+pink='#ff7575'
 yellow='#D79921'
 
 "
