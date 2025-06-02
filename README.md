@@ -2,7 +2,7 @@
 
 > "Too much gruv" "Ikr?"
 
-![Mac-Ricing](/assets/mac-ricing-4.png)
+![Mac-Ricing](/assets/mac-ricing-5.png)
 
 ## Ingredients
 
