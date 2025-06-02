@@ -83,7 +83,7 @@ return {
 
         -- Yaml-Language-Server
         null_ls.builtins.diagnostics.yamllint,
-        null_ls.builtins.formatting.prettierd,
+        -- null_ls.builtins.formatting.prettierd,
 
         -- dotenv
         null_ls.builtins.diagnostics.dotenv_linter,
