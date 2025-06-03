@@ -2,7 +2,7 @@
 gui:
   tabWidth: 4
   authorColors:
-    "Ben Karanja": "blue"
+    "iberniex": "blue"
     "*": "yellow"
   theme:
     # Border color of focused window
