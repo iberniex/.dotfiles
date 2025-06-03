@@ -1,4 +1,7 @@
 # ~/.gitconfig
+[user]
+	name = iberniex
+	email = ben.karanja@icloud.com
 [merge]
   tool = nvimdiff
 [mergetool]
