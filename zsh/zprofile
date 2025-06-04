@@ -34,3 +34,6 @@ export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_P
 
 # Cargo Path
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Postgres Path
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
