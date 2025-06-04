@@ -43,10 +43,7 @@ return {
     })
 
     -- python
-    lspconfig.pyright.setup({
-
-      capabilities = cmp_lsp.default_capabilities(),
-    })
+    lspconfig.pyright.setup({})
 
     -- dotenv: bash, env
     lspconfig.bashls.setup({})
