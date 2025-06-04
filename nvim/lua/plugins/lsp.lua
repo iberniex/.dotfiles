@@ -42,7 +42,12 @@ return {
       capabilities = cmp_lsp.default_capabilities(),
     })
 
-    --
+    -- python
+    lspconfig.pyright.setup({
+
+      capabilities = cmp_lsp.default_capabilities(),
+    })
+
     -- dotenv: bash, env
     lspconfig.bashls.setup({})
 
@@ -88,6 +93,10 @@ return {
         -- dotenv
         null_ls.builtins.diagnostics.dotenv_linter,
         null_ls.builtins.formatting.shfmt,
+
+        -- python
+        null_ls.builtins.diagnostics.pylint,
+        null_ls.builtins.formatting.black,
       },
       on_attach = function(client, bufnr)
         -- If you want formatting on save
