@@ -142,7 +142,7 @@ font-feature =
 # On Linux with GTK, font size is scaled according to both display-wide and
 # text-specific scaling factors, which are often managed by your desktop
 # environment (e.g. the GNOME display scale and large text settings).
-font-size = 14
+font-size = 14.2
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -1638,7 +1638,7 @@ window-titlebar-foreground =
 #                     subsequently resized.
 # 
 # The default is `after-first`.
-resize-overlay = after-first
+resize-overlay = never
 
 # If resize overlays are enabled, this controls the position of the overlay.
 # The possible options are:
@@ -2203,7 +2203,7 @@ macos-option-as-alt =
 # Whether to enable the macOS window shadow. The default value is true.
 # With some window managers and window transparency settings, you may
 # find false more visually appealing.
-macos-window-shadow = true
+macos-window-shadow = false
 
 # If true, Ghostty on macOS will automatically enable the "Secure Input"
 # feature when it detects that a password prompt is being displayed.
@@ -2392,7 +2392,7 @@ gtk-single-instance = desktop
 # 
 # Changing this value at runtime and reloading the configuration will only
 # affect new windows.
-gtk-titlebar = true
+gtk-titlebar = false
 
 # Determines the side of the screen that the GTK tab bar will stick to.
 # Top, bottom, left, right, and hidden are supported. The default is top.

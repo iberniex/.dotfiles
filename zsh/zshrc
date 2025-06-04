@@ -105,9 +105,6 @@ fi
 source <(fzf --zsh --style full \
     --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}')
 
-# zsh-autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 
 #zsh-syntax-highlighing
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
