@@ -3,7 +3,7 @@ title: "Book: {{title}}"
 source:
 id:
 author:
-created: { { format-date now "long" } }
+created: {{format-date now "long"}}
 modified:
 type: Book
 tags:

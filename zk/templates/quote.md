@@ -3,7 +3,7 @@ title: "Quote: {{title}}"
 id:
 source:
 author:
-created: "{{format-date now \"medium\"}}"
+created: "{{format-date now 'medium'}}"
 type: quote
 tags:
   - type/quote
