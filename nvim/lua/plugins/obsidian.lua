@@ -44,6 +44,10 @@ return {
         name = "project",
         path = "~/Documents/vault/300-Projects",
       },
+      {
+        name = "journal",
+        path = "~/Documents/vault/002-Journal",
+      },
     },
     -- default folder for notes
     notes_subdir = "000-Index",
