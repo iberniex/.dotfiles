@@ -193,7 +193,7 @@ main() {
   MAX_LENGTH=$(get_tmux_option "@dracula-mac-player-length" 25)
 
   # Remote variables
-  REMOTE_ACCESS=$(get_tmux_option "@dracula-mac-remote" false)
+  REMOTE_ACCESS=$(get_tmux_option "@dracula-mac-player-remote" false)
   REMOTE_APP=$(get_tmux_option "@dracula-mac-player-app" "spotify")
 
   # Remote Control Buttons Customizations
