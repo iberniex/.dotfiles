@@ -49,7 +49,8 @@
 # 
 # Changing this configuration at runtime will only affect new terminals, i.e.
 # new windows, tabs, etc.
-font-family = "Monaspace Neon Frozen, AnonymicePro Nerd Font" 
+font-family = "Monaspace Neon Frozen" 
+font-family = "AnonymicePro Nerd Font"
 font-family-bold = ""
 font-family-italic = ""
 font-family-bold-italic = ""
@@ -66,7 +67,7 @@ font-family-bold-italic = ""
 # These are only valid if its corresponding font-family is also specified. If
 # no font-family is specified, then the font-style is ignored unless you're
 # disabling the font style.
-font-style = bold  
+font-style = 
 
 font-style-bold = default
 font-style-italic = default
