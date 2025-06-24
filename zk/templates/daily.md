@@ -1,7 +1,7 @@
 ---
 title: "Journal: {{format-date now '%Y-%m-%d'}}"
 template-type: daily
-tag:
+tags:
   - type/journal
   - group/journal
   - type/daily

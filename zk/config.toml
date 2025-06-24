@@ -73,7 +73,7 @@ lit = "zk list --tag=literature --interactive"
 project = "zk list --tag=project --interactive"
 
 # List journal notes
-journal = "zk list --tag=journal --interactive"
+journal = "zk list --tag=type/journal --interactive"
 
 [group.daily]
 paths = ["002-Journal/daily"]
