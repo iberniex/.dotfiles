@@ -64,16 +64,16 @@ daily = 'zk new --no-input "$ZK_NOTEBOOK_DIR/002-Journal/daily"'
 inline = "zk list --quiet --format {{path}} --delimiter , $@"
 
 # List fleeting notes
-fleeting = "zk list --tag=fleeting --interactive"
+fleeting = "zk edit --tag=fleeting --interactive"
 
 # List literature notes
-lit = "zk list --tag=literature --interactive"
+lit = "zk edit --tag=literature --interactive"
 
 # List project notes
-project = "zk list --tag=project --interactive"
+project = "zk edit --tag=project --interactive"
 
 # List journal notes
-journal = "zk list --tag=type/journal --interactive"
+journal = "zk edit --tag=type/journal --interactive"
 
 [group.daily]
 paths = ["002-Journal/daily"]
