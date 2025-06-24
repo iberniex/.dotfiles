@@ -6,6 +6,8 @@ time: {{format-date now "time"}}
 modified:
 type: pseudocode
 tags:
+    - literature
+    - pseudocode
 lead:
 ---
 

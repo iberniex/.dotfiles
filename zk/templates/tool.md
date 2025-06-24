@@ -9,6 +9,8 @@ type: tool
 tags:
     - type/tool
     - theme/xyz
+    - tool
+    - literature
 aliases:
 ---
 

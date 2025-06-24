@@ -6,6 +6,8 @@ modified:
 type: permanent
 aliases:
 tags:
+    - question
+    - permanent
 lead:
 question:
 ---

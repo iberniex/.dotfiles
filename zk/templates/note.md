@@ -6,6 +6,8 @@ modified:
 type: note
 aliases:
 tags:
+    - permanent
+    - note
 lead:
 ---
 

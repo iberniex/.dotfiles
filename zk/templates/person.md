@@ -9,6 +9,8 @@ type: person
 tags: 
     - type/person
     - theme/xyz
+    - person
+    - literature
 bio_short:
 ---
 

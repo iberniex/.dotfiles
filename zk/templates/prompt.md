@@ -6,10 +6,14 @@ modified:
 type: 
     - type/prompt
     - theme/xyz
+    - prompt
+    - literature
 aliases:
 question: 
 
 tags:
+    - prompt
+    - literature
 lead:
 ---
 # {{Title}}

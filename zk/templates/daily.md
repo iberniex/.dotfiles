@@ -5,6 +5,8 @@ tag:
   - type/journal
   - group/journal
   - type/daily
+  - journal
+  - daily
 aliases:
 created:
 modified:

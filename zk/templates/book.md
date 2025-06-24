@@ -9,6 +9,8 @@ type: Book
 tags:
   - type/book
   - theme/xyz
+  - literature
+  - book
 aliases:
 ---
 

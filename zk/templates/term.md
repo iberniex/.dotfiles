@@ -11,6 +11,8 @@ aliases:
 tags: 
     - type/term
     - theme/xyz
+    - term
+    - literature
 ---
 
 # {{Title}}

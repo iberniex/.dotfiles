@@ -8,6 +8,8 @@ type: quote
 tags:
   - type/quote
   - theme/xyz
+  - quote 
+  - literature
 ---
 
 # {{title}}

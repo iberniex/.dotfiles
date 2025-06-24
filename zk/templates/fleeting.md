@@ -6,6 +6,7 @@ date: {{format-date now "medium"}}
 time: {{format-date now "time"}}
 type: fleeting
 tags:
+    - fleeting
 ---
 
 # {{Title}}

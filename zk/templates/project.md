@@ -1,11 +1,12 @@
 ---
-title: "Person: {{title}}"
+title: "Project: {{title}}"
 id: {{id}}
 created: {{format-date now "medium"}}
 modified:
 type: project
 aliases:
 tags:
+    - project
 lead:
 ---
 # {{Title}}

@@ -6,6 +6,7 @@ modified:
 type: permanent
 aliases:
 tags:
+    - permanent
 lead:
 ---
 # {{Title}}
