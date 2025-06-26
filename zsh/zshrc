@@ -90,12 +90,6 @@ if type lf &> /dev/null; then
 	fi
 fi
 	
-
-# FZF configuration
-source <(fzf --zsh --style full \
-    --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}')
-
-
 #zsh-syntax-highlighing
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
