@@ -41,6 +41,7 @@ vim.keymap.set(
 
 -- quit configuration
 vim.keymap.set("n", "<leader>qq", ":q<CR>", { noremap = true, silent = true, desc = "quit" })
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {

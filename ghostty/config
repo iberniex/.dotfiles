@@ -1366,7 +1366,7 @@ window-padding-y = 0
 # apply. The other padding is applied first and may affect how many grid cells
 # actually exist, and this is applied last in order to balance the padding
 # given a certain viewport size and grid cell size.
-window-padding-balance = false
+window-padding-balance = true
 
 # The color of the padding area of the window. Valid values are:
 # 
@@ -1388,7 +1388,7 @@ window-padding-balance = false
 # * The nearest row contains a perfect fit powerline character. These
 #   don't look good extended.
 # 
-window-padding-color = background
+window-padding-color = extend
 
 # Synchronize rendering with the screen refresh rate. If true, this will
 # minimize tearing and align redraws with the screen but may cause input
@@ -1499,7 +1499,7 @@ window-subtitle = false
 # non-terminal windows within Ghostty.
 # 
 # This is currently only supported on macOS and Linux.
-window-theme = auto
+window-theme = system
 
 # The color space to use when interpreting terminal colors. "Terminal colors"
 # refers to colors specified in your configuration and colors produced by
@@ -1604,7 +1604,7 @@ window-save-state = default
 # Resize the window in discrete increments of the focused surface's cell size.
 # If this is disabled, surfaces are resized in pixel increments. Currently
 # only supported on macOS.
-window-step-resize = false
+window-step-resize = true
 
 # The position where new tabs are created. Valid values:
 # 
@@ -1639,7 +1639,7 @@ window-titlebar-foreground =
 #                     subsequently resized.
 # 
 # The default is `after-first`.
-resize-overlay = never
+resize-overlay = always
 
 # If resize overlays are enabled, this controls the position of the overlay.
 # The possible options are:
@@ -1957,7 +1957,7 @@ quick-terminal-space-behavior = move
 #   * `bash`, `elvish`, `fish`, `zsh` - Use this specific shell injection scheme.
 # 
 # The default value is `detect`.
-shell-integration = zsh
+shell-integration = 
 
 # Shell integration features to enable. These require our shell integration
 # to be loaded, either automatically via shell-integration or manually.
@@ -2361,7 +2361,7 @@ linux-cgroup-hard-fail = false
 
 # Enable or disable GTK's OpenGL debugging logs. The default is `true` for
 # debug builds, `false` for all others.
-gtk-opengl-debug = false
+gtk-opengl-debug = true
 
 # Obsolete configuration that should not be set. This was deprecated in
 # Ghostty 1.1.3 and no longer has any effect. The configuration key will

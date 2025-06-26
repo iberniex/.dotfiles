@@ -13,7 +13,9 @@ return {
         operators = false,
         folds = false,
       },
+      contrast = "hard",
     })
-    vim.o.background = "dark", vim.cmd([[colorscheme gruvbox]])
+    vim.o.background = "dark"
+    vim.cmd([[colorscheme gruvbox]])
   end,
 }
