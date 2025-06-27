@@ -14,13 +14,20 @@
 
 # Initialize ohmyzsh
 
-ZSH_THEME="spaceship"
+ZSH_THEME=""
+
+source $(brew --prefix)/opt/spaceship/spaceship.zsh
+
+SPACESHIP_PROMPT_ADD_NEWLINE=false
 
 plugins=(
 	git
 	macos
 	jsontools
 )
+
+source $ZSH/oh-my-zsh.sh
+
 
 # Environmental variables
 
@@ -93,4 +100,4 @@ fi
 #zsh-syntax-highlighing
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $ZSH/oh-my-zsh.sh
+
