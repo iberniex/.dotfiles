@@ -150,7 +150,7 @@ function sliceTrack()
   local result=""
 
   if [[ $len > $std ]]; then
-    result="${str:0:std}"
+    result="${str:0:$std}"
     result+="..."
   else
     result=$str
