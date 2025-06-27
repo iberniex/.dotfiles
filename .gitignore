@@ -8,6 +8,7 @@ tmux/plugins
 fish_variables
 lazy-lock.json
 .luarc.json
+.opencode
 yarn
 glab-cli
 neofetch
