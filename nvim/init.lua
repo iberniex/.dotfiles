@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- elixir configurations for .exs extension
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.exs",
+  pattern = { "*.ex", "*.exs" },
   callback = function()
     vim.bo.filetype = "elixir"
     vim.cmd("TSBufEnable highlight")
