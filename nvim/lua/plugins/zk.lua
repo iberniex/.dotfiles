@@ -25,6 +25,13 @@ return {
 
     -- Define workspaces and templates
     local workspaces = {
+      index = {
+        name = "index",
+        path = {
+          index = "~/Documents/vault/000-Index",
+        },
+        template = "index.md",
+      },
       fleeting = {
         name = "fleeting",
         path = {
@@ -143,6 +150,13 @@ return {
             title = vim.fn.input("project title: "),
             template = workspace.template,
           })
+        elseif workspace.name == "index" then
+          vim.cmd("cd " .. workspace.path["index"])
+          require("zk.commands").get("ZkNew")({
+            dir = vim.fn.expand(workspace.path["index"]),
+            title = "index." .. vim.fn.input("index title: "),
+            template = workspace.template,
+          })
         else
           print("Workspace not found: " .. workspace_name)
         end
@@ -178,6 +192,12 @@ return {
       { noremap = true, silent = true, desc = "creating a project note" }
     )
 
+    vim.keymap.set(
+      "n",
+      "zi",
+      ":lua CreateNote('index', 'ZkNew')<CR>",
+      { noremap = true, silent = true, desc = "creating a index note" }
+    )
     -- note creation from selection:title
     vim.api.nvim_set_keymap(
       "v",
