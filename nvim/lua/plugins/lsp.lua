@@ -27,6 +27,12 @@ return {
       capabilities = cmp_lsp.default_capabilities(),
     })
 
+    -- elixir: elixir-ls
+    lspconfig.elixirls.setup({
+      capabilities = cmp_lsp.default_capabilities(),
+      cmd = { "~/.config/elixir-ls/language_server.sh" },
+    })
+
     -- Markdown: markdown_oxide
     lspconfig.markdown_oxide.setup({
       capabilities = cmp_lsp.default_capabilities(),
@@ -80,6 +86,11 @@ return {
         -- Lua_Ls
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.diagnostics.selene,
+
+        -- elixir
+        null_ls.builtins.diagnostics.credo,
+        null_ls.builtins.formatting.mix,
+
         -- Clangd
         null_ls.builtins.diagnostics.cppcheck,
         null_ls.builtins.formatting.clang_format,

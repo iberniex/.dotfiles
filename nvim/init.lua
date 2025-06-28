@@ -6,6 +6,7 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
+vim.o.syntax = "enable"
 
 -- Text LSPConfig hover on buffer change
 vim.diagnostic.config({
@@ -26,5 +27,16 @@ vim.api.nvim_create_autocmd("FileType", {
     ]])
   end,
 })
+
+-- elixir configurations for .exs extension
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.exs",
+  callback = function()
+    vim.bo.filetype = "elixir"
+    vim.cmd("TSBufEnable highlight")
+  end,
+})
+
 -- Lazy configuration
+--
 require("config.lazy")
