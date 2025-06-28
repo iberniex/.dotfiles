@@ -5,10 +5,6 @@ type: index
 tags:
   - index
   - {{title}}
-aliases:
-  - {{title}} titles
-  - {{title}} reference
-  - {{title}} knowledge hub
 created: {{format-date now "medium"}}
 ---
 
