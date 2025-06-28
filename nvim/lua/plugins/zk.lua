@@ -154,7 +154,7 @@ return {
           vim.cmd("cd " .. workspace.path["index"])
           require("zk.commands").get("ZkNew")({
             dir = vim.fn.expand(workspace.path["index"]),
-            title = "index." .. vim.fn.input("index title: "),
+            title = vim.fn.input("index title: "),
             template = workspace.template,
           })
         else
