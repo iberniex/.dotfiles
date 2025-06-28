@@ -4,4 +4,3 @@ name = "vim"
 
 [vim]
 any = true
-
