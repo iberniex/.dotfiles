@@ -15,9 +15,9 @@ A central hub for all notes, definitions, and resources related to **{{Title Cas
 
 **Definitions & Terms**
 
-```dataviewjs
+```dataview
 table title as "Term", file.link as "Note", tags
-from "100-literature"
+from "100-Literature"
 where contains(tags, "{{title}}") and contains(tags, "term")
 sort file.name asac
 ```
@@ -25,16 +25,16 @@ sort file.name asac
 **Guides $ concepts***
 
 
-```dataviewjs
+```dataview
 table title as "Guide", file.link as "Note", tags
-from "100-literature"
+from "100-Literature"
 where contains(tags, "{{title}}") and contains(tags, "guide")
 sort file.name asc
 ```
 
 **Code Snippets & Patterns**
 
-```dataviewjs
+```dataview
 table file.link as "Snippet", tags
 from "snippets"
 where contains(tags, "{{title}}")
@@ -43,9 +43,9 @@ sort file.name asc
 
 **Open Questions**
 
-```dataviewjs
+```dataview
 table question as "Question", file.link as "Note"
-from "literature"
+from "Literature"
 where contains(tags, "{{title}}") and question
 ```
 
