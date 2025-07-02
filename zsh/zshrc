@@ -101,4 +101,5 @@ fi
 #zsh-syntax-highlighing
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-
+# GCHI: haskell compiler
+[ -f "/Users/vberniex/.ghcup/env" ] && . "/Users/vberniex/.ghcup/env" # ghcup-env
