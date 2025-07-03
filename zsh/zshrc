@@ -68,7 +68,6 @@ export ARCHFLAGS="-arch $(uname -m)"
 
 alias v="nvim"
 alias sp="spotify_player"
-alias lzg="lazygit"
 alias man='MANPAGER="less -XNR --use-color -Dd+y -Du+208 -DN+r" man' 
 alias vault='cd ~/Documents/vault'
 alias core='cd ~/Documents/projects/The-Core-Dump'
