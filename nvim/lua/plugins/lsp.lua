@@ -7,30 +7,56 @@ return {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "nvimtools/none-ls.nvim",
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
   },
 
   config = function()
-    require("mason").setup()
-    require("mason-lspconfig").setup({
-      ensure_installed = { "clangd", "bashls", "yamlls" },
-    })
     local lspconfig = require("lspconfig")
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local cmp_lsp = require("cmp_nvim_lsp")
 
+    local on_attach = function(client, bufnr)
+      vim.opt_local.conceallevel = 2
+      if vim.bo[bufnr].filetype == "rust" then
+        client.server_capabilities.documentFormattingProvider = false
+        return
+      end
+      if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.buf.format({ bufnr = bufnr })
+          end,
+        })
+      end
+    end
+
     -- LSP Setup
     -- C/C++: Clang
     lspconfig.clangd.setup({
       capabilities = cmp_lsp.default_capabilities(),
+      on_attach = on_attach,
+    })
+
+    lspconfig.rust_analyzer.setup({
+      capabilities = cmp_lsp.default_capabilities(),
+      settings = {
+        ["rust-analyzer"] = {
+          checkOnSave = {
+            command = "clippy",
+            allFeatures = true,
+            extraArgs = { "--", "-D", "warnings" },
+          },
+        },
+      },
+      on_attach = on_attach,
     })
 
     -- elixir: elixir-ls
     lspconfig.elixirls.setup({
       capabilities = cmp_lsp.default_capabilities(),
-      cmd = { "~/.config/elixir-ls/language_server.sh" },
+      cmd = { vim.fn.expand("~/.config/elixir-ls/language_server.sh") },
+      on_attach = on_attach,
     })
 
     -- Markdown: markdown_oxide
@@ -41,21 +67,25 @@ return {
           ".moxide.toml",
         },
       },
+      on_attach = on_attach,
     })
 
     -- Yaml: yaml-language-server
     lspconfig.yamlls.setup({
       capabilities = cmp_lsp.default_capabilities(),
+      on_attach = on_attach,
     })
 
     -- python
     lspconfig.pyright.setup({
       capabilities = cmp_lsp.default_capabilities(),
+      on_attach = on_attach,
     })
 
     -- dotenv: bash, env
     lspconfig.bashls.setup({
       capabilities = cmp_lsp.default_capabilities(),
+      on_attach = on_attach,
     })
 
     -- Lua: Lua Ls
@@ -81,6 +111,7 @@ return {
           },
         },
       },
+      on_attach = on_attach,
     })
 
     -- none-ls setup
@@ -111,18 +142,7 @@ return {
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.formatting.black,
       },
-      on_attach = function(client, bufnr)
-        -- If you want formatting on save
-        if client.supports_method("textDocument/formatting") then
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            callback = function()
-              vim.lsp.buf.format({ bufnr = bufnr })
-            end,
-          })
-        end
-        vim.opt_local.conceallevel = 2
-      end,
+      on_attach = on_attach,
     })
     -- CMP Setup
     cmp.setup({
