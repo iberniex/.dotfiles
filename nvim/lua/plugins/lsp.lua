@@ -49,10 +49,14 @@ return {
     })
 
     -- python
-    lspconfig.pyright.setup({})
+    lspconfig.pyright.setup({
+      capabilities = cmp_lsp.default_capabilities(),
+    })
 
     -- dotenv: bash, env
-    lspconfig.bashls.setup({})
+    lspconfig.bashls.setup({
+      capabilities = cmp_lsp.default_capabilities(),
+    })
 
     -- Lua: Lua Ls
     lspconfig.lua_ls.setup({
