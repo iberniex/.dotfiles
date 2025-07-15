@@ -77,6 +77,7 @@ alias core='cd ~/Documents/projects/The-Core-Dump'
 alias config='cd ~/.config'
 alias lab='cd ~/Documents/projects/Lab'
 alias projects="cd ~/Documents/projects"
+alias irx="evcxr"
 
 # Lf configurations
 # to save the current directory
