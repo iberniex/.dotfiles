@@ -17,10 +17,6 @@ return {
 
     local on_attach = function(client, bufnr)
       vim.opt_local.conceallevel = 2
-      if vim.bo[bufnr].filetype == "rust" then
-        client.server_capabilities.documentFormattingProvider = false
-        return
-      end
       if client.supports_method("textDocument/formatting") then
         vim.api.nvim_create_autocmd("BufWritePre", {
           buffer = bufnr,
