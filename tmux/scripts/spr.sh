@@ -6,10 +6,9 @@ current_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$current_dir/utils.sh"
 
 
-function trackStatus() {
-  local pause_icon="$1"
-  local play_icon="$2"
-	local track_info
+trackStatus() {
+  local pause_icon="$1" play_icon="$2"
+	local track_info playback status track_result
 
   playback=$(spotify_player get key playback)
 
@@ -18,7 +17,7 @@ function trackStatus() {
   track_info=$(echo "$playback" | jq -r '.item | "\(.artists | map(.name) | join(", ")) - \(.name)"')
   track_result=""
 
-  if [[ $status == true ]]; then
+  if [[ $status == "true" ]]; then
     track_result+=$play_icon
     track_result+=$track_info
   else
@@ -42,7 +41,7 @@ function sliceTrack()
   local result=""
 
   if [[ $len > $std ]]; then
-    result="${str:0:std}"
+    result="${str:0:$std}"
     result+="..."
   else
     result=$str
@@ -52,7 +51,7 @@ function sliceTrack()
 }
 
 
-function remoteControl() {
+function sprRemoteControl() {
   local toggle_button="$1"
   local back_button="$2"
   local next_button="$3"
@@ -66,9 +65,9 @@ function remoteControl() {
   tmux unbind-key "$back_button"
   tmux unbind-key "$next_button"
 
-  tmux bind-key "$toggle_button" run-shell "$toggle"
-  tmux bind-key "$back_button" run-shell "$back"
-  tmux bind-key "$next_button" run-shell "$next"
+  tmux bind-key "$toggle_button" run-shell -b -q "$toggle"
+  tmux bind-key "$back_button" run-shell -b -q "$back"
+  tmux bind-key "$next_button" run-shell -b -q "$next"
 
 }
 
@@ -76,36 +75,41 @@ main() {
   # save buffer to prevent lag
   local cache_file="/tmp/tmux_spr_cache"
 
-  RATE=$(get_tmux_option "@dracula-refresh-rate" 2)
+  RATE=$(get_tmux_option "@dracula-refresh-rate" 5)
 
   MAX_LENGTH=$(get_tmux_option "@dracula-spr-length" 25)
 
   # Remote Control checker
-  REMOTE_ACCESS=$(get_tmux_option "@dracula-spr-remote" true)
+  SPR_REMOTE_ACCESS=$(get_tmux_option "@dracula-spr-remote" false)
 
-  PLAY_ICON=$(get_tmux_option "@dracula-spr-remote-play-icon" "♪ ")
-  PAUSE_ICON=$(get_tmux_option "@dracula-spr-remote-pause" "❚❚ ")
+  PLAY_ICON=$(get_tmux_option "@dracula-spr-play-icon" "♪ ")
+  PAUSE_ICON=$(get_tmux_option "@dracula-spr-pause-icon" "❚❚ ")
 
-  # Remote Control Buttons Customizations
-  PLAY_PAUSE_BUTTON=$(get_tmux_option "@dracula-spr-remote-pp" "P")
-  BACK_BUTTON=$(get_tmux_option "@dracula-spr-remote-back" "R")
-  NEXT_BUTTON=$(get_tmux_option "@dracula-spr-remote-next" "N")
+
+  if ! command -v spotify_player &> /dev/null
+  then
+    exit 1
+  fi
 
   # Remote Access
-  if [[ "$REMOTE_ACCESS" == true ]]; then
-    remoteControl "$PLAY_PAUSE_BUTTON" "$BACK_BUTTON" "$NEXT_BUTTON"
-  else
-    tmux unbind-key "$PLAY_PAUSE_BUTTON"
-    tmux unbind-key "$BACK_BUTTON"
-    tmux unbind-key "$NEXT_BUTTON"
+  if [[ "$SPR_REMOTE_ACCESS" == "true" ]]; then
+    # Remote Control Buttons Customizations
+    PLAY_PAUSE_BUTTON=$(get_tmux_option "@dracula-spr-remote-play-pause" "P")
+    BACK_BUTTON=$(get_tmux_option "@dracula-spr-remote-back" "R")
+    NEXT_BUTTON=$(get_tmux_option "@dracula-spr-remote-next" "N")
+
+    sprRemoteControl "$PLAY_PAUSE_BUTTON" "$BACK_BUTTON" "$NEXT_BUTTON"
+
   fi
 
-  if [ ! -f "$cache_file" ] || [ $(($(date +%s) - $(stat -f%c "$cache_file"))) -ge "$RATE" ]; then
-    trackStatus "$PAUSE_ICON" "$PLAY_ICON" > "$cache_file"
-    sliceTrack "$(cat $cache_file)" "$MAX_LENGTH" > "$cache_file"
+ if [ ! -f "$cache_file" ] || [ $(($(date +%s) - $(stat -f%c "$cache_file"))) -ge "$RATE" ]; then
+    local full_track
+    full_track=$(trackStatus "$PAUSE_ICON" "$PLAY_ICON")
+    sliceTrack "$full_track" "$MAX_LENGTH" > "$cache_file"
   fi
 
-	cat "$cache_file"
+  echo "$PLAY_PAUSE_BUTTON"
 }
 
 main
+

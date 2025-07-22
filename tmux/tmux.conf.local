@@ -319,7 +319,7 @@ tmux_conf_battery_bar_symbol_empty="◻"
 #tmux_conf_battery_bar_symbol_full="♥"
 #tmux_conf_battery_bar_symbol_empty="·"
 
-# battery bar length (in number of symbols), possible values are:
+#tell application "Spotify" to back track'' battery bar length (in number of symbols), possible values are:
 #   - auto
 #   - a number, e.g. 5
 tmux_conf_battery_bar_length="auto"
@@ -443,7 +443,7 @@ tmux_conf_uninstall_plugins_on_reload=true
 
 set -g @plugin "dracula/tmux"
 
-set -g @dracula-plugins 'battery git custom:mac-player.sh'
+set -g @dracula-plugins 'battery git mac-player'
 set -g @dracula-refresh-rate 2
 
 # status-bar
@@ -467,7 +467,11 @@ set -g @dracula-battery-label false
 set -g @dracula-show-battery-status true
 
 # mac-player
-set -g @dracula-mac-player-remote true
+set -g @dracula-mac-player-remote false
+
+# spr
+set -g @dracula-spr-remote false
+
 
 set -g @dracula-colors "
 # simple gruvbox Color Pallette
