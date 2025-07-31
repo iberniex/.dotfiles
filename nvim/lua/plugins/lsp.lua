@@ -73,7 +73,7 @@ return {
     })
 
     -- python
-    lspconfig.pyright.setup({
+    lspconfig.basedpyright.setup({
       capabilities = cmp_lsp.default_capabilities(),
       on_attach = on_attach,
     })
