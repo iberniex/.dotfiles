@@ -28,6 +28,11 @@ return {
     end
 
     -- LSP Setup
+    -- Javascript/typescript: ts_ls
+    lspconfig.ts_ls.setup({
+      capabilities = cmp_lsp.default_capabilities(),
+      on_attach = on_attach,
+    })
     -- C/C++: Clang
     lspconfig.clangd.setup({
       capabilities = cmp_lsp.default_capabilities(),
