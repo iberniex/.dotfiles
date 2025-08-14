@@ -235,6 +235,10 @@ automatically-unhide-macos-hidden-apps = false
 	run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
+	if.app-id = 'com.brave.Browser'
+	run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
 	if.app-id = 'app.zen-browser.zen'
 	run = 'move-node-to-workspace B'
 
@@ -249,5 +253,6 @@ automatically-unhide-macos-hidden-apps = false
 [[on-window-detected]]
 	if.app-id = 'org.zotero.zotero'
 	run = 'move-node-to-workspace Z'
+
 
 
