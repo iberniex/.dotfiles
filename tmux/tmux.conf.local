@@ -468,6 +468,7 @@ set -g @dracula-show-battery-status true
 
 # mac-player
 set -g @dracula-mac-player-remote false
+set -g @dracula-mac-player-scroll true
 
 # spr
 set -g @dracula-spr-remote false
