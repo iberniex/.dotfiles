@@ -247,6 +247,10 @@ automatically-unhide-macos-hidden-apps = false
 	run = 'move-node-to-workspace B'
 	
 [[on-window-detected]]
+	if.app-id = 'net.waterfox.waterfox'
+	run = 'move-node-to-workspace B'
+
+[[on-window-detected]]
 	if.app-id = 'company.thebrowser.Browser'
 	run = 'move-node-to-workspace B'
 
