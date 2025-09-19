@@ -10,7 +10,6 @@ return {
   },
 
   config = function()
-    local lspconfig = require("lspconfig")
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local cmp_lsp = require("cmp_nvim_lsp")
@@ -29,17 +28,17 @@ return {
 
     -- LSP Setup
     -- Javascript/typescript: ts_ls
-    lspconfig.ts_ls.setup({
+    vim.lsp.config("ts_ls", {
       capabilities = cmp_lsp.default_capabilities(),
       on_attach = on_attach,
     })
     -- C/C++: Clang
-    lspconfig.clangd.setup({
+    vim.lsp.config("clangd", {
       capabilities = cmp_lsp.default_capabilities(),
       on_attach = on_attach,
     })
 
-    lspconfig.rust_analyzer.setup({
+    vim.lsp.config("rust_analyzer", {
       capabilities = cmp_lsp.default_capabilities(),
       settings = {
         ["rust-analyzer"] = {
@@ -54,14 +53,14 @@ return {
     })
 
     -- elixir: elixir-ls
-    lspconfig.elixirls.setup({
+    vim.lsp.config("elixirls", {
       capabilities = cmp_lsp.default_capabilities(),
       cmd = { vim.fn.expand("~/.config/elixir-ls/language_server.sh") },
       on_attach = on_attach,
     })
 
     -- Markdown: markdown_oxide
-    lspconfig.markdown_oxide.setup({
+    vim.lsp.config("markdown_oxide", {
       capabilities = cmp_lsp.default_capabilities(),
       settings = {
         root_markers = {
@@ -72,25 +71,25 @@ return {
     })
 
     -- Yaml: yaml-language-server
-    lspconfig.yamlls.setup({
+    vim.lsp.config("yamlls", {
       capabilities = cmp_lsp.default_capabilities(),
       on_attach = on_attach,
     })
 
     -- python
-    lspconfig.basedpyright.setup({
+    vim.lsp.config("basedpyright", {
       capabilities = cmp_lsp.default_capabilities(),
       on_attach = on_attach,
     })
 
     -- dotenv: bash, env
-    lspconfig.bashls.setup({
+    vim.lsp.config("bashls", {
       capabilities = cmp_lsp.default_capabilities(),
       on_attach = on_attach,
     })
 
     -- Lua: Lua Ls
-    lspconfig.lua_ls.setup({
+    vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
           runtime = {
@@ -113,6 +112,18 @@ return {
         },
       },
       on_attach = on_attach,
+    })
+
+    vim.lsp.enable({
+      "lua_ls",
+      "clangd",
+      "bashls",
+      "basedpyright",
+      "yamlls",
+      "markdown_oxide",
+      "ts_ls",
+      "rust_analyzer",
+      "elixirls",
     })
 
     -- none-ls setup
