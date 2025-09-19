@@ -34,51 +34,33 @@ wiki-title="hint"
 dead-link="error"
 
 [lsp.completion]
-# Show the note title in the completion pop-up, or fallback on its path if empty.
 note-label = "{{path}}"
-# Filter out the completion pop-up using the note title or its path.
 note-filter-text = "{{title}} {{path}}"
-# Show the note filename without extension as detail.
 note-detail = "{{filename-stem}}"
 
 [filter]
 recents="--sort created- --created-after 'last two weeks'"
 
 [alias]
-# Edit the last modified note.
 edlast = "zk edit --limit 1 --sort modified- $@"
-
-# backlinks access to a note
 bl = "zk list --link-to $@"
-
-# Edit the notes selected interactively among the notes created the last two weeks.
 recent = "zk edit --sort created- --created-after 'last two weeks' --interactive"
-
-# Show a random note.
 lucky = "zk list --quiet --format full --sort random --limit 1"
 
-# daily note creation
 daily = 'zk new --no-input "002-Journal/daily"'
 
-# expanding filtered note paths
 inline = "zk list --quiet --format {{path}} --delimiter , $@"
 
-# List fleeting notes
 ix = "zk edit --tag=index --interactive"
 
-# List fleeting notes
 fleeting = "zk edit --tag=fleeting --interactive"
 
-# List literature notes
 lit = "zk edit --tag=literature --interactive"
 
-# List permanent notes
 permanent = "zk edit --tag=permanent --interactive"
 
-# List project notes
 project = "zk edit --tag=project --interactive"
 
-# List journal notes
 journal = "zk edit --tag=type/journal --interactive"
 
 [group.daily]
