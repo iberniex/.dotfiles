@@ -65,7 +65,7 @@ sort file.name asac
 table title as "Guide", file.link as "Note", tags
 from "100-Literature"
 where contains(tags, "{{title}}") and contains(tags, "guide")
-sort file.name asc
+sort file.name asac
 ```
 
 **Code Snippets & Patterns**
@@ -74,15 +74,16 @@ sort file.name asc
 table file.link as "Snippet", as file.link as "Patterns" tags
 from "snippets"
 where contains(tags, "{{title}}")
-sort file.name asc
+sort file.name asac
 ```
 
 **Open Questions**
 
 ```dataview
-table question as "Question", file.link as "Note"
+table question as "Prompt", file.link as "Note"
 from "Literature"
-where contains(tags, "{{title}}") and question
+where contains(tags, "{{title}}") and contains(tags, "prompt")
+sort file.name asac
 ```
 
 ---
