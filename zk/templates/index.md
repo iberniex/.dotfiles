@@ -18,7 +18,7 @@ A central hub for all notes, definitions, and resources related to **{{Title Cas
 table title as "Journal", file.link as "Note", tags
 from "002-Journal"
 where contains(tags, "{{title}}") and contains(tags, "journal")
-sort file.name asac
+sort file.name asc
 ```
 
 **Fleeting Notes**
@@ -27,7 +27,7 @@ sort file.name asac
 table title as "Fleeting", file.link as "Note", tags
 from "001-Fleeting"
 where contains(tags, "{{title}}") and contains(tags, "fleeting")
-sort file.name asac
+sort file.name asc
 ```
 
 **Permanent Notes**
@@ -36,7 +36,7 @@ sort file.name asac
 table title as "Permanent", file.link as "Note", tags
 from "200-Permanent"
 where contains(tags, "{{title}}") and contains(tags, "permanent")
-sort file.name asac
+sort file.name asc
 ```
 
 
@@ -46,7 +46,7 @@ sort file.name asac
 table title as "Projects", file.link as "Note", tags
 from "300-Projects"
 where contains(tags, "{{title}}") and contains(tags, "projects")
-sort file.name asac
+sort file.name asc
 ```
 
 **Definitions & Terms**
@@ -55,7 +55,7 @@ sort file.name asac
 table title as "Term", file.link as "Note", tags
 from "100-Literature"
 where contains(tags, "{{title}}") and contains(tags, "question")
-sort file.name asac
+sort file.name asc
 ```
 
 **Guides $ concepts**
@@ -65,16 +65,16 @@ sort file.name asac
 table title as "Guide", file.link as "Note", tags
 from "100-Literature"
 where contains(tags, "{{title}}") and contains(tags, "guide")
-sort file.name asac
+sort file.name asc
 ```
 
 **Code Snippets & Patterns**
 
 ```dataview
-table file.link as "Snippet", as file.link as "Patterns" tags
+table title as "Snippet", file.link as "Note", tags
 from "snippets"
-where contains(tags, "{{title}}")
-sort file.name asac
+where contains(tags, "{{title}}") and contains(tags, "snippet", "patterns")
+sort file.name asc
 ```
 
 **Open Questions**
@@ -83,7 +83,7 @@ sort file.name asac
 table question as "Prompt", file.link as "Note"
 from "Literature"
 where contains(tags, "{{title}}") and contains(tags, "prompt")
-sort file.name asac
+sort file.name asc
 ```
 
 ---
