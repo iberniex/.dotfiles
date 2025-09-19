@@ -54,7 +54,7 @@ sort file.name asac
 ```dataview
 table title as "Term", file.link as "Note", tags
 from "100-Literature"
-where contains(tags, "{{title}}") and contains(tags, "term")
+where contains(tags, "{{title}}") and contains(tags, "question")
 sort file.name asac
 ```
 
