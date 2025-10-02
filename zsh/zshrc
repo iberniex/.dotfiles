@@ -16,7 +16,7 @@
 
 ZSH_THEME=""
 
-source $(brew --prefix)/opt/spaceship/spaceship.zsh
+eval "$(starship init zsh)"
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 
