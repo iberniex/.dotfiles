@@ -42,9 +42,9 @@ else
   export EDITOR='vim'
 fi
 
-if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" = "ghostty" ]; then
-  tmux attach -t main || tmux new -s main || echo "Failed to start tmux"
-fi
+# if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" = "ghostty" ]; then
+#   tmux attach -t main || tmux new -s main || echo "Failed to start tmux"
+# fi
 
 # Zsh-autocomplete settings
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
