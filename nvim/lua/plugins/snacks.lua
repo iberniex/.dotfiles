@@ -6,7 +6,7 @@ return {
     bigfile = { enabled = true },
     image = { enabled = true },
     picker = { enabled = true },
-    notifier = { enabled = true },
+    notifier = { enabled = false },
     input = { enabled = true },
     words = { enabled = true },
     dashboard = {
