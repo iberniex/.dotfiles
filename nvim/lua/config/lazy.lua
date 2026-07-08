@@ -18,7 +18,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- import your plugins
+    --
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    --
     { import = "plugins" },
+  },
+  defaults = {
+    lazy = false,
+    version = false,
   },
 
   -- automatically check for plugin updates

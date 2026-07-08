@@ -8,15 +8,12 @@ return {
     -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
     -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
     -- refer to `:h file-pattern` for more examples
-    "BufReadPre "
-      .. vim.fn.expand("~")
-      .. "Documents/vault/*.md",
+    "BufReadPre " .. vim.fn.expand("~") .. "Documents/vault/*.md",
     "BufNewFile  " .. vim.fn.expand("~") .. "Documents/vault/*.md",
   },
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp",
     "nvim-telescope/telescope.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
@@ -67,7 +64,7 @@ return {
 
     -- auto completion with cmp
     completion = {
-      nvim_cmp = true,
+      nvim_cmp = false,
       min_chars = 2,
     },
 
