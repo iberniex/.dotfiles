@@ -1,14 +1,13 @@
--- escape configuration to change from ESC to "jj"
+-- Escape configuration to change from '<ESC>' to "<jj>"
 if vim.g.vscode then
   vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 end
 
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 
--- save configuration
--- single save configuration
--- Configuration variables
--- buffer configurations
+-- Save configuration
+-- Single save configuration
+-- Buffer configurations
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.tabstop = 2
