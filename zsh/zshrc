@@ -78,6 +78,7 @@ alias config='cd ~/.config/'
 alias lab='cd ~/Documents/projects/Lab'
 alias projects="cd ~/Documents/projects"
 alias irx="evcxr"
+alias msfconsole="/opt/metasploit-framework/bin/msfconsole"
 
 # Lf configurations
 # to save the current directory
