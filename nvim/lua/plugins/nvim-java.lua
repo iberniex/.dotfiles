@@ -1,7 +1,19 @@
 return {
   "nvim-java/nvim-java",
-  config = function()
-    require("java").setup()
-    vim.lsp.enable("jdtls")
-  end,
+  config = false,
+  dependencies = {
+    {
+      "neovim/nvim-lspconfig",
+      opts = {
+        servers = {
+          jdtls = {},
+        },
+        setup = {
+          jdtls = function()
+            require("java").setup({})
+          end,
+        },
+      },
+    },
+  },
 }
